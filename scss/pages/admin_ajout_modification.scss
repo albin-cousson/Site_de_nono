@@ -1,0 +1,42 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../utils/variables.scss";
+@import "../utils/fonctions.scss";
+@import "../utils/mixins.scss";
+@import "../utils/placeholders.scss";
+@import "../base/base.scss";
+
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/10/18/16/08/wolf-2864647_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body > a {
+    bottom: 20px;
+    right: 20px;
+}
+
+form {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 40px;
+    background-color: rgba(0,0,0,.7);
+}
+form input {
+    width: 85%;
+    height: 32px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form input:focus {
+    color: #ffffff;
+    background-color: #343a40;
+    border: 2px solid #FFF;
+    outline: none;
+}
+
+.id {
+    display: none !important;
+}

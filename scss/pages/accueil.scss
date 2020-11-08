@@ -1,0 +1,107 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../utils/variables.scss";
+@import "../utils/fonctions.scss";
+@import "../utils/mixins.scss";
+@import "../utils/placeholders.scss";
+@import "../base/base.scss";
+
+html, body {   
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.cadre_header {
+    &__title{
+        filter: drop-shadow(2px 4px 6px #303030);
+    }
+}
+.media img {
+    filter: drop-shadow(2px 4px 6px black);
+} 
+.jumbotron .fas {
+    bottom: 0;
+    left: 50%; 
+    transform: translate(-50%, 50%);
+    z-index: 3;
+    cursor: pointer;
+    animation: jumbotron_arrow 2s infinite;
+}
+@keyframes jumbotron_arrow {
+    0% {
+        transform: translate(-50%, 30%)
+    }
+    50% {
+        transform: translate(-50%, 70%)
+    }
+    100% {
+        transform: translate(-50%, 30%)
+    }
+}
+.carousel__masque {
+    background-color: rgba(0,0,0,.3);
+    z-index: 1;
+}
+.carousel-inner {
+    .carousel-item {
+        p {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Sweets Delight";
+            font-size: 45px;
+            z-index: 2;
+            transition: font-size .5s ease-in-out;
+        }
+        @media screen and (max-width: 1200px) {
+            p {
+                font-size: 70px;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            p {
+                font-size: 38px;
+            }
+        }
+        p:hover {
+            font-size: 48px;
+        }
+    }
+}
+.jumbotron_actus { 
+    .container{
+        h1 {
+            -webkit-text-stroke: $primary;
+            -webkit-text-stroke-width: 1.8px;
+        }
+    }  
+}
+.card {
+    .card-body {
+        &__redigé_par_nono {   
+            border-radius: 50%;
+        }
+        @media screen and (max-width: 1200px) and (min-width:700px){ 
+            &__redigé_par_nono {
+                width: 5rem;
+                height: 5rem;
+            }
+            &__zigzag{
+                width: 5rem;
+                height: 5rem;   
+            }
+        }
+        div {
+            .fab {
+                color: $primary;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.embed {
+    padding-bottom: 64px;
+}
+@media screen and (max-width: 1200px){
+    .embed {
+        padding-bottom: 0;
+    }
+}

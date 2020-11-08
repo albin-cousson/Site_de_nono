@@ -1,0 +1,28 @@
+@import "../../scss/utils/variables.scss";
+@import "../../scss/utils/fonctions.scss";
+@import "../../scss/utils/mixins.scss";
+@import "../../scss/utils/placeholders.scss";
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.alert {
+    z-index: 1;
+}
+form {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 400px;
+}
+form input {
+    width: 60%;
+    height: 32px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form input:focus {
+    color: #ffffff;
+    background-color: #343a40;
+    border: 2px solid #FFF;
+    outline: none;
+}

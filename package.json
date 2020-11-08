@@ -1,0 +1,15 @@
+{
+  "name": "site_de_nono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss/pages/admin.scss:admin/css/admin2.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
+}

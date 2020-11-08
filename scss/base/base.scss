@@ -1,0 +1,125 @@
+//typographie
+.display_perso {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+@media screen and (max-width: 1200px){
+    .display_perso {
+        font-size: 6rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+}
+@media screen and (max-width: 700px){
+    .display_perso {
+        font-size: 3rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+}
+.lead_perso {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+@media screen and (max-width: 1200px){
+    .lead_perso {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+}
+@media screen and (max-width: 700px){
+    .lead_perso {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}
+//icone & svg
+.big_icon_perso {
+    font-size: 3rem;
+}
+@media screen and (max-width: 1200px){
+    .big_icon_perso {
+        font-size: 5.5rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .big_icon_perso {
+        font-size: 3rem;
+    }
+}
+.small_icon_perso {
+    font-size: 1.8rem;
+}
+@media screen and (max-width: 1200px){
+    .small_icon_perso {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .small_icon_perso {
+        font-size: 1.8rem;
+    }
+}
+.small_svg_perso {
+    width: 1.25em;
+    height: 1.25em;
+}
+@media screen and (max-width: 1200px){
+    .small_svg_perso {
+        width: 2.25em;
+        height: 2.25em;
+    }
+}
+@media screen and (max-width: 700px){
+    .small_svg_perso {
+        width: 1.25em;
+        height: 1.25em;
+    }
+}
+//card 
+.card_title_perso {
+    font-size: 2rem;
+}
+@media screen and (max-width: 1200px){
+    .card_title_perso {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .card_title_perso {
+        font-size: 2rem;
+    }
+}
+.card_text_perso {
+    font-size: 1rem;
+}
+@media screen and (max-width: 1200px){
+    .card_text_perso {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .card_text_perso {
+        font-size: 1rem;
+    }
+}
+.card_icone_perso {
+    font-size: 2rem;
+}
+@media screen and (max-width: 1200px){
+    .card_icone_perso {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .card_icone_perso {
+        font-size: 2rem;
+    }
+}
+//boutton
+@media screen and (max-width: 1200){
+    .btn  {
+        font-size: 2rem;
+    }
+}
