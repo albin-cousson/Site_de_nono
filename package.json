@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch scss/pages/male-femelle.scss:bearded_collie/css/bearded_collie.css"
+    "sass": "sass --watch scss/pages/male-femelle.scss:bearded_collie/css/bearded_collieA.css"
   },
   "keywords": [],
   "author": "",

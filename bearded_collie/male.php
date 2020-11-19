@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/ec6f517b5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../header/css/header1.css"/>
-    <link rel="stylesheet" href="css/bearded_collie.css"/>
+    <link rel="stylesheet" href="css/bearded_collieA.css"/>
   </head>
   <body>
 
@@ -27,7 +27,7 @@
       <div class="row mt-3 mb-3 ml-1 mr-1">
         <div class="col-12 col-lg-6 p-0">
           <div class="card card__block m-3 text-center">
-            <div class="card-header bg-primary text-light display_perso">
+            <div class="card-header bg-primary text-light display_perso border-bottom border-light">
               MARGOT
             </div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -53,13 +53,13 @@
             </div>
             <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img class="mr-1 pb-1" src="./images/dog.svg" alt="" width="24px" height="24px"/>Profile</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Triomphe</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img class="mr-1 pb-1" src="./images/trophet.svg" alt="" width="24px" height="24px"/>Résultat</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Génétique</a>
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><img class="mr-1 pb-1" src="./images/adn.svg" alt="" width="24px" height="24px"/>Généalogie</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -103,7 +103,7 @@
 
         <div class="col-12 col-lg-6 p-0">
           <div class="card card__block m-3 text-center">
-            <div class="card-header bg-primary text-light display_perso">
+            <div class="card-header bg-primary text-light display_perso border-bottom border-light">
               MARGOT
             </div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -129,13 +129,13 @@
             </div>
             <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                <a class="nav-link nav-link-profile active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img class="mr-1 pb-1" src="./images/dog.svg" alt="" width="24px" height="24px"/>Profile</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Triomphe</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img class="mr-1 pb-1" src="./images/trophet.svg" alt="" width="24px" height="24px"/>Résultat</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Génétique</a>
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><img class="mr-1 pb-1" src="./images/adn.svg" alt="" width="24px" height="24px"/>Généalogie</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -179,7 +179,7 @@
 
         <div class="col-12 col-lg-6 p-0">
           <div class="card card__block m-3 text-center">
-            <div class="card-header bg-primary text-light display_perso">
+            <div class="card-header bg-primary text-light display_perso border-bottom border-light">
               MARGOT
             </div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -205,13 +205,13 @@
             </div>
             <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                <a class="nav-link nav-link-profile active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img class="mr-1 pb-1" src="./images/dog.svg" alt="" width="24px" height="24px"/>Profile</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Triomphe</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img class="mr-1 pb-1" src="./images/trophet.svg" alt="" width="24px" height="24px"/>Résultat</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Génétique</a>
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><img class="mr-1 pb-1" src="./images/adn.svg" alt="" width="24px" height="24px"/>Généalogie</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -255,7 +255,7 @@
 
         <div class="col-12 col-lg-6 p-0">
           <div class="card card__block m-3 text-center">
-            <div class="card-header bg-primary text-light display_perso">
+            <div class="card-header bg-primary text-light display_perso border-bottom border-light">
               MARGOT
             </div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -281,13 +281,13 @@
             </div>
             <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                <a class="nav-link nav-link-profile active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img class="mr-1 pb-1" src="./images/dog.svg" alt="" width="24px" height="24px"/>Profile</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Triomphe</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img class="mr-1 pb-1" src="./images/trophet.svg" alt="" width="24px" height="24px"/>Résultat</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Génétique</a>
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><img class="mr-1 pb-1" src="./images/adn.svg" alt="" width="24px" height="24px"/>Généalogie</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
