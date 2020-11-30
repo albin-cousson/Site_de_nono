@@ -5,7 +5,7 @@
 @import "../utils/placeholders.scss";
 @import "../base/base.scss";
 
-html, body {
+html, body { 
     overflow-x: hidden;
     -webkit-scrollbar: none;
 }
@@ -13,17 +13,16 @@ html, body {
 .header {
     width: 100%;
     height: 60vh;
-    background-image: url("https://cdn.pixabay.com/photo/2020/11/12/13/44/labrador-retriever-5735582_960_720.jpg");
-    background-size: cover;
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
     p{
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
         margin: auto;
-        text-align: center;
+        text-align: center; 
         color: transparent;
         font-size: 65px;
         font-weight: 1000;
@@ -32,6 +31,14 @@ html, body {
     }
 }
 
+.card {
+    border: none !important;
+    .list-group {
+        .list-group-item {
+            border-color: $primary-color;
+        }
+    }
+}
 .card__block {
     box-shadow: 0px 8px 15px #dbdbdb;
     transition: 0.3s box-shadow;
@@ -39,4 +46,174 @@ html, body {
         box-shadow: 0px 8px 25px #bebebe;
     }
 }
- 
+.nav-tabs {
+    border-bottom: 1px solid $primary-color !important;
+    .nav-link {
+        border-top-left-radius: 0rem !important;
+        border-top-right-radius: 0rem !important;   
+        border-color: transparent transparent transparent!important;
+    }
+    .active {
+        border-color: $primary-color $primary-color transparent!important;
+    }
+}
+.blockGenealogie {
+    position: relative;
+
+    &__grand-pere {
+        width: 120px;
+        height: 120px;
+        border: 1px solid #bebebe;
+        border-radius: 6px;
+        border-top: 5px solid $primary-color;
+
+        &__photo{
+            width: 100%;
+            height: 60%;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            background-image: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg");
+        }
+    }
+    &__grand-mere {
+        width: 120px;
+        height: 120px;
+        border: 1px solid #bebebe;
+        border-radius: 6px;
+        border-top: 5px solid $primary-color; 
+
+        &__photo{
+            width: 100%;
+            height: 60%;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            background-image: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg");
+        }
+    }
+    &__pere {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 10px;
+        border: 1px solid #bebebe;
+        border-radius: 6px;
+        border-top: 5px solid $primary-color;   
+
+        &__photo{
+            width: 100%;
+            height: 60%;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            background-image: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg");
+        }
+    }
+    &__mere {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        top: 10px;
+        border: 1px solid #bebebe;
+        border-radius: 6px;
+        border-top: 5px solid $primary-color;
+
+        &__photo{
+            width: 100%;
+            height: 60%;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            background-image: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg");
+        }
+    }
+    &__liaison-grand{
+        width: 120px; 
+        height: 10px;
+        border: 2px solid $primary-color; 
+        border-top: none;
+        border-radius: 1.5px;
+        transform: translateX(72px);
+    }
+    &__liaison-petit{
+        width: 2px;
+        height: 10px;
+        background-color: $primary-color;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+.liaison-grand{
+    width: 350px; 
+    height: 10px;
+    margin: auto;
+    border: 2px solid $primary-color; 
+    border-top: none;
+    margin-top: 10px;
+    border-radius: 1.5px;
+}
+.liaison-petit{
+    width: 2px;
+    height: 10px;
+    background-color: $primary-color;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.chienPresente{
+    border: 1px solid #bebebe;
+    border-top: 5px solid $primary-color;
+    border-radius: 6px;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0px 2px 16px #d1d1d1;
+
+    &__photo{
+        width: 200px;
+        height: 200px;
+        border-radius: 6px;
+        background-image: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg");
+    }
+}
+.buttonGenealogie{
+    font-size: 1.2rem;
+    border-radius: 0.25rem ;
+
+}
+@keyframes flecheGenealogie {
+    0% {
+        transform: translateX(0%)
+    }
+    50% {
+        transform: translateX(20%)
+    }
+    100% {
+        transform: translateX(0%)
+    }
+}
+.nav-link:hover {
+    svg path {
+        fill: $primary-color !important;
+    }
+}
+.active:hover {
+    svg path {
+        fill: white!important;
+    }
+}
+.nav-link svg path {
+    fill: #343a40;
+}
+.active svg path {
+    fill: white
+}
+.carousel-item div {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 330px;
+}
+
+
+   
