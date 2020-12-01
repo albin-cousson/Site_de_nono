@@ -12,14 +12,15 @@
     <?php
 
     include("../../bdd.php");
-      
+
+    $page = $_GET['page'];  
     $table = $_GET['table'];
     $champ = $bdd->query("SHOW COLUMNS FROM $table");
     $id = $_GET['id'];
     $entre = $bdd->query("SELECT * FROM $table WHERE id = $id");
     $entre_recu = $entre->fetch();
     ?>
-    <form method="GET" action="../admin_accueil.php" class="d-flex flex-column justify-content-center align-items-center position-absolute">
+    <form method="GET" action="<?php echo $page; ?>" class="d-flex flex-column justify-content-center align-items-center position-absolute">
     <?php
     $i=-1;
     while ($champ_recu = $champ->fetch()){

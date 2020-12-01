@@ -26,12 +26,21 @@
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-12 p-0">
-                      <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark">
-                        <ul class="navbar-nav">
+                    <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark">
+                        <ul class="navbar-nav d-flex flex-row">
                           <li class="nav-item">
-                            <a class="nav-link">
+                            <a class="nav-link mr-3" href="./admin_accueil.php">
                               Accueil
                             </a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Bearded collie
+                            </a>
+                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="./admin_beardedCollieMale.php">Mâle</a>
+                              <a class="dropdown-item" href="#">Femelle</a>
+                            </div>
                           </li>
                         </ul>
                         <a class="btn btn-light" href="deconexion.php">
@@ -50,7 +59,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel header</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_image_header">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -73,10 +82,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -112,7 +121,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Cadre header</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_cadre_header">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_cadre_header">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -139,10 +148,10 @@
                                     <?php echo substr($entres_recu['url_image'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -178,7 +187,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Image header responsive</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_image_header_responsive">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header_responsive">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -197,10 +206,10 @@
                                     <?php echo substr($entres_recu['url_image'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -236,7 +245,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Jumbotron présentation</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_jumbotron_presentation">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_jumbotron_presentation">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -259,10 +268,10 @@
                                     <?php echo substr($entres_recu['text'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -298,7 +307,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel présentation bearded</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_presentation_bearded">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_bearded">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -325,10 +334,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -364,7 +373,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel présentation shih-tzu</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_presentation_shihshih">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_shihshih">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -391,10 +400,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -430,7 +439,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel présentation chiots</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_presentation_chiots">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_chiots">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -457,10 +466,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -496,7 +505,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Titre actualités</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_titre_actualite">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_titre_actualite">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -515,10 +524,10 @@
                                     <?php echo substr($entres_recu['titre'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -554,7 +563,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Vidéo</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_video">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_video">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -573,10 +582,10 @@
                                     <?php echo substr($entres_recu['url_video'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -621,11 +630,20 @@
                   <div class="row">
                     <div class="col-12 p-0">
                       <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav d-flex flex-row">
                           <li class="nav-item">
-                            <a class="nav-link">
+                            <a class="nav-link mr-3" href="./admin_accueil.php">
                               Accueil
                             </a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Bearded collie
+                            </a>
+                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="./admin_beardedCollieMale.php">Mâle</a>
+                              <a class="dropdown-item" href="#">Femelle</a>
+                            </div>
                           </li>
                         </ul>
                         <a class="btn btn-light" href="deconexion.php">
@@ -644,7 +662,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel header</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_image_header">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -667,10 +685,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -706,7 +724,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Cadre header</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_cadre_header">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_cadre_header">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -733,10 +751,10 @@
                                     <?php echo substr($entres_recu['url_image'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_cadre_header&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -772,7 +790,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Image header responsive</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_image_header_responsive">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header_responsive">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -791,10 +809,10 @@
                                     <?php echo substr($entres_recu['url_image'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_image_header_responsive&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -830,7 +848,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Jumbotron présentation</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_jumbotron_presentation">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_jumbotron_presentation">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -853,10 +871,10 @@
                                     <?php echo substr($entres_recu['text'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_jumbotron_presentation&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -892,7 +910,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel présentation bearded</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_presentation_bearded">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_bearded">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -919,10 +937,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_bearded&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -958,7 +976,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel présentation shih-tzu</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_presentation_shihshih">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_shihshih">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -985,10 +1003,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_shihshih&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -1024,7 +1042,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Carousel présentation chiots</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_presentation_chiots">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_chiots">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -1051,10 +1069,10 @@
                                     <?php echo substr($entres_recu['position'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_presentation_chiots&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -1090,7 +1108,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Titre actualités</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_titre_actualite">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_titre_actualite">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -1109,10 +1127,10 @@
                                     <?php echo substr($entres_recu['titre'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_titre_actualite&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -1148,7 +1166,7 @@
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
                               <p class="h1 text-light m-0 position-relative">Vidéo</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?table=accueil_video">Ajouter</a>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_accueil.php&table=accueil_video">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
@@ -1167,10 +1185,10 @@
                                     <?php echo substr($entres_recu['url_video'],0,30) ?>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_accueil.php&table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
                                   </td>
                                   <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_accueil.php&table=accueil_video&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
                                   </td>
                                 </tr>
                               <?php
@@ -1213,9 +1231,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="js/admin1.js"> </script>
   </body>
 </html>

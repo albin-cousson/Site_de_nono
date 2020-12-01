@@ -13,10 +13,11 @@
 
     include("../../bdd.php");
 
+    $page = $_GET['page'];
     $table = $_GET['table'];
     $champ = $bdd->query("SHOW COLUMNS FROM $table");
     ?>
-    <form method="POST" action="../admin_accueil.php" class="d-flex flex-column justify-content-center align-items-center position-absolute">
+    <form method="POST" action="<?php echo $page; ?>" class="d-flex flex-column justify-content-center align-items-center position-absolute">
     <?php
     while ($champ_recu = $champ->fetch()){
     ?>
