@@ -112,6 +112,132 @@
                 }
                 ?>
 
+                 <!--<--<--<--<--<--<--<--<--<--<--<--<-- Block présentation: Nom des chiens -->
+                 <div class="row">
+                    <div class="col-12 mt-5">
+                      <div class="m-auto w-75">
+                        <table class="w-100">
+                          <caption class="position-relative">
+                            <div class="position-absolute"></div>
+                            <nav class="navbar p-0">
+                              <p class="h1 text-light m-0 position-relative">Noms des chiens</p>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_nomDuChien">Ajouter</a>
+                            </nav>
+                          </caption>
+                          <?php
+                              ?>
+                                <th>Nom du chien</th>
+                              <?php
+                              ?>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                              <?php
+                            $entres = $bdd->query("SELECT nom, id FROM beardedCollieMale_nomDuChien");
+                            while($entres_recu = $entres->fetch()){
+                              ?>
+                                <tr>
+                                  <td>
+                                    <?php echo $entres_recu['nom'] ?>
+                                  </td>
+                                  <td>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_nomDuChien&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                                  </td>
+                                  <td>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_nomDuChien&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                  </td>
+                                </tr>
+                              <?php
+                            }
+                          ?>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Ajout -->
+                <?php
+                if (isset($_POST['nom'])){
+                  $ajout = $bdd->prepare("INSERT INTO beardedCollieMale_nomDuChien(nom) VALUE (?)");
+                  $ajout->execute(array($_POST['nom'])); 
+                }
+                ?>
+
+                <!-- Modification -->
+                <?php
+                if (isset($_GET['nom'])){
+                  $modification = $bdd->prepare("UPDATE beardedCollieMale_nomDuChien SET nom=? WHERE id=?");
+                  $modification->execute(array($_GET['nom'], $_GET['id'])); 
+                }
+                ?>
+
+                 <!--<--<--<--<--<--<--<--<--<--<--<--<-- Block présentation: Profile -->
+                 <div class="row">
+                    <div class="col-12 mt-5">
+                      <div class="m-auto w-75">
+                        <table class="w-100">
+                          <caption class="position-relative">
+                            <div class="position-absolute"></div>
+                            <nav class="navbar p-0">
+                              <p class="h1 text-light m-0 position-relative">Profiles des chiens</p>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_blockPresentaionProfile&foreignKey=true">Ajouter</a>
+                            </nav>
+                          </caption>
+                          <?php
+                              ?>
+                                <th>Nom du chien</th>
+                                <th>Date de naissance</th>
+                              <?php
+                              ?>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                              <?php
+                            $entres = $bdd->query("SELECT beardedCollieMale_nomDuChien.nom, beardedCollieMale_blockPresentaionProfile.date_naissance, beardedCollieMale_blockPresentaionProfile.id_nomDuChien, beardedCollieMale_blockPresentaionProfile.id FROM beardedCollieMale_nomDuChien, beardedCollieMale_blockPresentaionProfile WHERE beardedCollieMale_nomDuChien.id=beardedCollieMale_blockPresentaionProfile.id_nomDuChien");
+                            while($entres_recu = $entres->fetch()){
+                              ?>
+                                <tr>
+                                  <td>
+                                    <?php echo $entres_recu['nom'] ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $entres_recu['date_naissance'] ?>
+                                  </td>
+                                  <td>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_blockPresentaionProfile&id=<?php echo $entres_recu['id'] ?>&foreignKey=true">Modifier</a>
+                                  </td>
+                                  <td>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_blockPresentaionProfile&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                  </td>
+                                </tr>
+                              <?php
+                            }
+                          ?>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Ajout -->
+                <?php
+                if (isset($_POST['date_naissance'])){
+                  $ajout = $bdd->prepare("INSERT INTO beardedCollieMale_blockPresentaionProfile(date_naissance, id_nomDuChien) VALUE (?,?)");
+                  $foreignKey = $bdd->prepare("SELECT id FROM beardedCollieMale_nomDuChien WHERE nom=?");
+                  $foreignKey->execute((array($_POST['foreignKey'])));
+                  $foreignKey_recu = $foreignKey->fetch();
+                  $ajout->execute(array($_POST['date_naissance'], $foreignKey_recu['id'])); 
+                }
+                ?>
+
+                <!-- Modification -->
+                <?php
+                if (isset($_GET['date_naissance'])){
+                  $modification = $bdd->prepare("UPDATE beardedCollieMale_blockPresentaionProfile SET date_naissance=?, id_nomDuChien=? WHERE id=?");
+                  $foreignKey = $bdd->prepare("SELECT id FROM beardedCollieMale_nomDuChien WHERE nom=?");
+                  $foreignKey->execute((array($_GET['foreignKey'])));
+                  $foreignKey_recu = $foreignKey->fetch();
+                  $modification->execute(array($_GET['date_naissance'], $foreignKey_recu['id'], $_GET['id'])); 
+                }
+                ?>
+
               <?php
             }
             else {
@@ -219,13 +345,13 @@
                           <caption class="position-relative">
                             <div class="position-absolute"></div>
                             <nav class="navbar p-0">
-                              <p class="h1 text-light m-0 position-relative">Nom des chiens</p>
+                              <p class="h1 text-light m-0 position-relative">Noms des chiens</p>
                               <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_nomDuChien">Ajouter</a>
                             </nav>
                           </caption>
                           <?php
                               ?>
-                                <th>Nom</th>
+                                <th>Nom du chien</th>
                               <?php
                               ?>
                                 <th>Modifier</th>
@@ -266,6 +392,74 @@
                 if (isset($_GET['nom'])){
                   $modification = $bdd->prepare("UPDATE beardedCollieMale_nomDuChien SET nom=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['id'])); 
+                }
+                ?>
+
+                 <!--<--<--<--<--<--<--<--<--<--<--<--<-- Block présentation: Profile -->
+                 <div class="row">
+                    <div class="col-12 mt-5">
+                      <div class="m-auto w-75">
+                        <table class="w-100">
+                          <caption class="position-relative">
+                            <div class="position-absolute"></div>
+                            <nav class="navbar p-0">
+                              <p class="h1 text-light m-0 position-relative">Profiles des chiens</p>
+                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_blockPresentaionProfile&foreignKey=true">Ajouter</a>
+                            </nav>
+                          </caption>
+                          <?php
+                              ?>
+                                <th>Nom du chien</th>
+                                <th>Date de naissance</th>
+                              <?php
+                              ?>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                              <?php
+                            $entres = $bdd->query("SELECT beardedCollieMale_nomDuChien.nom, beardedCollieMale_blockPresentaionProfile.date_naissance, beardedCollieMale_blockPresentaionProfile.id_nomDuChien, beardedCollieMale_blockPresentaionProfile.id FROM beardedCollieMale_nomDuChien, beardedCollieMale_blockPresentaionProfile WHERE beardedCollieMale_nomDuChien.id=beardedCollieMale_blockPresentaionProfile.id_nomDuChien");
+                            while($entres_recu = $entres->fetch()){
+                              ?>
+                                <tr>
+                                  <td>
+                                    <?php echo $entres_recu['nom'] ?>
+                                  </td>
+                                  <td>
+                                    <?php echo $entres_recu['date_naissance'] ?>
+                                  </td>
+                                  <td>
+                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_blockPresentaionProfile&id=<?php echo $entres_recu['id'] ?>&foreignKey=true">Modifier</a>
+                                  </td>
+                                  <td>
+                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../admin_beardedCollieMale.php&table=beardedCollieMale_blockPresentaionProfile&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                                  </td>
+                                </tr>
+                              <?php
+                            }
+                          ?>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Ajout -->
+                <?php
+                if (isset($_POST['date_naissance'])){
+                  $ajout = $bdd->prepare("INSERT INTO beardedCollieMale_blockPresentaionProfile(date_naissance, id_nomDuChien) VALUE (?,?)");
+                  $foreignKey = $bdd->prepare("SELECT id FROM beardedCollieMale_nomDuChien WHERE nom=?");
+                  $foreignKey->execute((array($_POST['foreignKey'])));
+                  $foreignKey_recu = $foreignKey->fetch();
+                  $ajout->execute(array($_POST['date_naissance'], $foreignKey_recu['id'])); 
+                }
+                ?>
+
+                <!-- Modification -->
+                <?php
+                if (isset($_GET['date_naissance'])){
+                  $modification = $bdd->prepare("UPDATE beardedCollieMale_blockPresentaionProfile SET date_naissance=?, id_nomDuChien=? WHERE id=?");
+                  $foreignKey = $bdd->prepare("SELECT id FROM beardedCollieMale_nomDuChien WHERE nom=?");
+                  $foreignKey->execute((array($_GET['foreignKey'])));
+                  $foreignKey_recu = $foreignKey->fetch();
+                  $modification->execute(array($_GET['date_naissance'], $foreignKey_recu['id'], $_GET['id'])); 
                 }
                 ?>
                 

@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/admin_ajout_modification2.css"/>
+    <link rel="stylesheet" href="css/admin_ajout_modification3.css"/>
   </head>
   <body>
-
-    <a class="btn btn-outline-light position-absolute" href="../admin_accueil.php">Retour à l'accueil</a>
 
     <?php
 
@@ -16,9 +14,21 @@
     $page = $_GET['page'];  
     $table = $_GET['table'];
     $champ = $bdd->query("SHOW COLUMNS FROM $table");
+    // foreign key "nom du chien"
+    if (isset($_GET['foreignKey'])){
+      $foreignKey = $bdd->query("SELECT nom FROM beardedCollieMale_nomDuChien");
+    }
+    //
     $id = $_GET['id'];
     $entre = $bdd->query("SELECT * FROM $table WHERE id = $id");
     $entre_recu = $entre->fetch();
+    // foreign key "nom du chien"
+    if (isset($_GET['foreignKey'])){
+      $nomDuChien = $bdd->prepare('SELECT nom FROM beardedCollieMale_nomDuChien WHERE id=?');
+      $nomDuChien->execute(array($entre_recu['id']));
+      $nomDuChien_recu = $nomDuChien->fetch();
+    }
+    // 
     ?>
     <form method="GET" action="<?php echo $page; ?>" class="d-flex flex-column justify-content-center align-items-center position-absolute">
     <?php
@@ -27,6 +37,23 @@
     $i++;
     ?>
       <div class="form-group d-flex flex-column justify-content-center align-items-center w-100">
+
+        <!-- Apparait pour faire le lien entre les différents chiens de des pages mâle/femelle -->
+      <?php 
+        if (isset($_GET['foreignKey'])){
+      ?>
+        <p class="h5 text-light">Chien associé</p>
+        <select class="mb-3" name="foreignKey">
+          <?php
+            while ($foreignKey_recu = $foreignKey->fetch()){
+              ?><option><?php echo $foreignKey_recu['nom'];?></option><?php
+            }
+          ?>
+        </select>
+      <?php
+        }
+      ?>
+
         <label class="h5 text-light"><?php echo ucfirst($champ_recu['Field']) ?></label>
         <input type="text" name="<?php echo $champ_recu['Field'] ?>" value="<?php echo $entre_recu[$i]; ?>"/>
       </div>
@@ -35,6 +62,8 @@
     ?>
       <button type="submit" class="btn btn-light h5 text-dark">Ajouter</button>
     </form>
+
+    <a class="btn btn-outline-light position-absolute" href="<?php echo $page;?>">Retour</a>
 
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

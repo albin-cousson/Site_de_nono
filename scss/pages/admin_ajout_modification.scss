@@ -30,13 +30,19 @@ form input {
     font-size: 18px;
     border-radius: 6px;
 }
+form select {
+    width: 85%;
+    height: 32px;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
 form input:focus {
     color: #ffffff;
     background-color: #343a40;
     border: 2px solid #FFF;
     outline: none;
 }
-
 .id {
-    display: none !important;
+    display: none !important; 
 }
