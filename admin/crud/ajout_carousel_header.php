@@ -21,26 +21,32 @@
     ?>
     <form method="POST" action="<?php echo $page; ?>" class="d-flex flex-column justify-content-center align-items-center position-absolute">
     <?php
+    
+    //Apparait pour faire le lien entre les différents chiens de des pages mâle/femelle
+       if (isset($_GET['foreignKey'])){
+    ?>
+      <p class="h5 text-light">Chien associé</p>
+      <select class="mb-3" name="foreignKey">
+        <?php
+          while ($foreignKey_recu = $foreignKey->fetch()){
+            ?><option><?php echo $foreignKey_recu['nom'];?></option><?php
+          }
+        ?>
+      </select>
+    <?php
+      }
+    ?>
+
+    <!-- Renvoie le page associé -->
+    <input style="display:none;" type="text" name="<?php echo $page ?>" value="<?php echo $page ?>"/> 
+
+    <!-- Renvoie le table associé -->
+      <input style="display:none;" type="text" name="<?php echo $table ?>" value="<?php echo $table ?>"/> 
+    <?php
+
     while ($champ_recu = $champ->fetch()){
     ?>
       <div class="form-group d-flex flex-column justify-content-center align-items-center w-100">
-
-       <!-- Apparait pour faire le lien entre les différents chiens de des pages mâle/femelle -->
-       <?php 
-          if (isset($_GET['foreignKey'])){
-        ?>
-          <p class="h5 text-light">Chien associé</p>
-          <select class="mb-3" name="foreignKey">
-            <?php
-              while ($foreignKey_recu = $foreignKey->fetch()){
-                ?><option><?php echo $foreignKey_recu['nom'];?></option><?php
-              }
-            ?>
-          </select>
-        <?php
-          }
-        ?>
-
         <label class="h5 text-light"><?php echo ucfirst($champ_recu['Field']) ?></label>
         <input type="text" name="<?php echo $champ_recu['Field'] ?>"/> 
       </div>

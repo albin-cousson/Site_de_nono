@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/admin4.css"/>
+    <link rel="stylesheet" href="css/admin5.css"/>
   </head>
   <body class="d-flex flex-column justify-content-center align-items-center pb-5">
 
@@ -98,7 +98,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_image_header'])){
+                if (isset($_POST['accueil_image_header'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_image_header(url_image, position) VALUE (?,?)");
                   $ajout->execute(array($_POST['url_image'], $_POST['position'])); 
                 }
@@ -106,7 +106,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_image_header'])){
+                if (isset($_GET['accueil_image_header'])){
                   $modification = $bdd->prepare("UPDATE accueil_image_header SET url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -164,7 +164,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_cadre_header'])){
+                if (isset($_POST['accueil_cadre_header'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_cadre_header(titre, text, url_image) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['titre'], $_POST['text'], $_POST['url_image'])); 
                 }
@@ -172,7 +172,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_cadre_header'])){
+                if (isset($_GET['accueil_cadre_header'])){
                   $modification = $bdd->prepare("UPDATE accueil_cadre_header SET titre=?, text=?, url_image=? WHERE id=?");
                   $modification->execute(array($_GET['titre'], $_GET['text'], $_GET['url_image'], $_GET['id'])); 
                 }
@@ -222,7 +222,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_image_header_reponsive'])){
+                if (isset($_POST['accueil_image_header_responsive'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_image_header_responsive(url_image) VALUE (?)");
                   $ajout->execute(array($_POST['url_image'])); 
                 }
@@ -230,7 +230,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_image_header_reponsive'])){
+                if (isset($_GET['accueil_image_header_responsive'])){
                   $modification = $bdd->prepare("UPDATE accueil_image_header_responsive SET url_image=? WHERE id=?");
                   $modification->execute(array($_GET['url_image'], $_GET['id'])); 
                 }
@@ -284,7 +284,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_jumbotron_presentation'])){
+                if (isset($_POST['accueil_jumbotron_presentation'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_jumbotron_presentation(titre, text) VALUE (?,?)");
                   $ajout->execute(array($_POST['titre'], $_POST['text'])); 
                 }
@@ -292,7 +292,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_jumbotron_presentation'])){
+                if (isset($_GET['accueil_jumbotron_presentation'])){
                   $modification = $bdd->prepare("UPDATE accueil_jumbotron_presentation SET titre=?, text=? WHERE id=?");
                   $modification->execute(array($_GET['titre'], $_GET['text'], $_GET['id'])); 
                 }
@@ -350,7 +350,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_presentation_bearded'])){
+                if (isset($_POST['accueil_presentation_bearded'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_presentation_bearded(nom, url_image, position) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['nom'], $_POST['url_image'], $_POST['position'])); 
                 }
@@ -358,7 +358,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_presentation_bearded'])){
+                if (isset($_GET['accueil_presentation_bearded'])){
                   $modification = $bdd->prepare("UPDATE accueil_presentation_bearded SET nom=?, url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -416,7 +416,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_presentation_shihshih'])){
+                if (isset($_POST['accueil_presentation_shihshih'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_presentation_shihshih(nom, url_image, position) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['nom'], $_POST['url_image'], $_POST['position'])); 
                 }
@@ -424,7 +424,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_presentation_shihshih'])){
+                if (isset($_GET['accueil_presentation_shihshih'])){
                   $modification = $bdd->prepare("UPDATE accueil_presentation_shihshih SET nom=?, url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -482,7 +482,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_presentation_chiots'])){
+                if (isset($_POST['accueil_presentation_chiots'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_presentation_chiots(nom, url_image, position) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['nom'], $_POST['url_image'], $_POST['position'])); 
                 }
@@ -490,7 +490,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_presentation_chiots'])){
+                if (isset($_GET['accueil_presentation_chiots'])){
                   $modification = $bdd->prepare("UPDATE accueil_presentation_chiots SET nom=?, url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -540,7 +540,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_titre_actualite'])){
+                if (isset($_POST['accueil_titre_actualite'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_titre_actualite(titre) VALUE (?)");
                   $ajout->execute(array($_POST['titre'])); 
                 }
@@ -548,7 +548,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_titre_actualite'])){
+                if (isset($_GET['accueil_titre_actualite'])){
                   $modification = $bdd->prepare("UPDATE accueil_titre_actualite SET titre=? WHERE id=?");
                   $modification->execute(array($_GET['titre'], $_GET['id'])); 
                 }
@@ -598,7 +598,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_video'])){
+                if (isset($_POST['accueil_video'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_video(url_video) VALUE (?)");
                   $ajout->execute(array($_POST['url_video'])); 
                 }
@@ -606,7 +606,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_video'])){
+                if (isset($_GET['accueil_video'])){
                   $modification = $bdd->prepare("UPDATE accueil_video SET url_video=? WHERE id=?");
                   $modification->execute(array($_GET['url_video'], $_GET['id'])); 
                 }
@@ -701,7 +701,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_image_header'])){
+                if (isset($_POST['accueil_image_header'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_image_header(url_image, position) VALUE (?,?)");
                   $ajout->execute(array($_POST['url_image'], $_POST['position'])); 
                 }
@@ -709,7 +709,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_image_header'])){
+                if (isset($_GET['accueil_image_header'])){
                   $modification = $bdd->prepare("UPDATE accueil_image_header SET url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -767,7 +767,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_cadre_header'])){
+                if (isset($_POST['accueil_cadre_header'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_cadre_header(titre, text, url_image) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['titre'], $_POST['text'], $_POST['url_image'])); 
                 }
@@ -775,7 +775,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_cadre_header'])){
+                if (isset($_GET['accueil_cadre_header'])){
                   $modification = $bdd->prepare("UPDATE accueil_cadre_header SET titre=?, text=?, url_image=? WHERE id=?");
                   $modification->execute(array($_GET['titre'], $_GET['text'], $_GET['url_image'], $_GET['id'])); 
                 }
@@ -825,7 +825,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_image_header_reponsive'])){
+                if (isset($_POST['accueil_image_header_responsive'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_image_header_responsive(url_image) VALUE (?)");
                   $ajout->execute(array($_POST['url_image'])); 
                 }
@@ -833,7 +833,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_image_header_reponsive'])){
+                if (isset($_GET['accueil_image_header_responsive'])){
                   $modification = $bdd->prepare("UPDATE accueil_image_header_responsive SET url_image=? WHERE id=?");
                   $modification->execute(array($_GET['url_image'], $_GET['id'])); 
                 }
@@ -887,7 +887,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_jumbotron_presentation'])){
+                if (isset($_POST['accueil_jumbotron_presentation'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_jumbotron_presentation(titre, text) VALUE (?,?)");
                   $ajout->execute(array($_POST['titre'], $_POST['text'])); 
                 }
@@ -895,7 +895,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_jumbotron_presentation'])){
+                if (isset($_GET['accueil_jumbotron_presentation'])){
                   $modification = $bdd->prepare("UPDATE accueil_jumbotron_presentation SET titre=?, text=? WHERE id=?");
                   $modification->execute(array($_GET['titre'], $_GET['text'], $_GET['id'])); 
                 }
@@ -953,7 +953,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_presentation_bearded'])){
+                if (isset($_POST['accueil_presentation_bearded'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_presentation_bearded(nom, url_image, position) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['nom'], $_POST['url_image'], $_POST['position'])); 
                 }
@@ -961,7 +961,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_presentation_bearded'])){
+                if (isset($_GET['accueil_presentation_bearded'])){
                   $modification = $bdd->prepare("UPDATE accueil_presentation_bearded SET nom=?, url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -1019,7 +1019,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_presentation_shihshih'])){
+                if (isset($_POST['accueil_presentation_shihshih'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_presentation_shihshih(nom, url_image, position) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['nom'], $_POST['url_image'], $_POST['position'])); 
                 }
@@ -1027,7 +1027,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_presentation_shihshih'])){
+                if (isset($_GET['accueil_presentation_shihshih'])){
                   $modification = $bdd->prepare("UPDATE accueil_presentation_shihshih SET nom=?, url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -1085,7 +1085,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_presentation_chiots'])){
+                if (isset($_POST['accueil_presentation_chiots'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_presentation_chiots(nom, url_image, position) VALUE (?,?,?)");
                   $ajout->execute(array($_POST['nom'], $_POST['url_image'], $_POST['position'])); 
                 }
@@ -1093,7 +1093,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_presentation_chiots'])){
+                if (isset($_GET['accueil_presentation_chiots'])){
                   $modification = $bdd->prepare("UPDATE accueil_presentation_chiots SET nom=?, url_image=?, position=? WHERE id=?");
                   $modification->execute(array($_GET['nom'], $_GET['url_image'], $_GET['position'], $_GET['id'])); 
                 }
@@ -1143,7 +1143,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_titre_actualite'])){
+                if (isset($_POST['accueil_titre_actualite'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_titre_actualite(titre) VALUE (?)");
                   $ajout->execute(array($_POST['titre'])); 
                 }
@@ -1151,7 +1151,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_titre_actualite'])){
+                if (isset($_GET['accueil_titre_actualite'])){
                   $modification = $bdd->prepare("UPDATE accueil_titre_actualite SET titre=? WHERE id=?");
                   $modification->execute(array($_GET['titre'], $_GET['id'])); 
                 }
@@ -1201,7 +1201,7 @@
 
                 <!-- Ajout -->
                 <?php
-                if (isset($_POST['id_video'])){
+                if (isset($_POST['accueil_video'])){
                   $ajout = $bdd->prepare("INSERT INTO accueil_video(url_video) VALUE (?)");
                   $ajout->execute(array($_POST['url_video'])); 
                 }
@@ -1209,7 +1209,7 @@
 
                 <!-- Modification -->
                 <?php
-                if (isset($_GET['id_video'])){
+                if (isset($_GET['accueil_video'])){
                   $modification = $bdd->prepare("UPDATE accueil_video SET url_video=? WHERE id=?");
                   $modification->execute(array($_GET['url_video'], $_GET['id'])); 
                 }

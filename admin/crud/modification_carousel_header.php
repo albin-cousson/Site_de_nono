@@ -32,15 +32,9 @@
     ?>
     <form method="GET" action="<?php echo $page; ?>" class="d-flex flex-column justify-content-center align-items-center position-absolute">
     <?php
-    $i=-1;
-    while ($champ_recu = $champ->fetch()){
-    $i++;
-    ?>
-      <div class="form-group d-flex flex-column justify-content-center align-items-center w-100">
 
-        <!-- Apparait pour faire le lien entre les différents chiens de des pages mâle/femelle -->
-      <?php 
-        if (isset($_GET['foreignKey'])){
+    //Apparait pour faire le lien entre les différents chiens de des pages mâle/femelle
+    if (isset($_GET['foreignKey'])){
       ?>
         <p class="h5 text-light">Chien associé</p>
         <select class="mb-3" name="foreignKey">
@@ -50,17 +44,26 @@
             }
           ?>
         </select>
-      <?php
-        }
-      ?>
+    <?php
+      }
+    ?>
 
+    <!-- Renvoie le table associé -->
+      <input style="display:none;" type="text" name="<?php echo $table ?>" value="<?php echo $table ?>"/> 
+    <?php
+
+    $i=-1;
+    while ($champ_recu = $champ->fetch()){
+    $i++;
+    ?>
+      <div class="form-group d-flex flex-column justify-content-center align-items-center w-100">
         <label class="h5 text-light"><?php echo ucfirst($champ_recu['Field']) ?></label>
         <input type="text" name="<?php echo $champ_recu['Field'] ?>" value="<?php echo $entre_recu[$i]; ?>"/>
       </div>
     <?php
     }
     ?>
-      <button type="submit" class="btn btn-light h5 text-dark">Ajouter</button>
+      <button type="submit" class="btn btn-light h5 text-dark">Modifier</button>
     </form>
 
     <a class="btn btn-outline-light position-absolute" href="<?php echo $page;?>">Retour</a>

@@ -5,8 +5,9 @@
 @import "../../scss/utils/placeholders.scss";
 @import "../../scss/base/base.scss";
  
-.col-12 > div:hover {
-    transition: box-shadow .3s ease-out;
+.col-12 > div {
+    box-shadow: 0px 0px 0px #FFF;
+    transition: box-shadow .4s ease-out;
 }
 
 .col-12 > div:hover {
