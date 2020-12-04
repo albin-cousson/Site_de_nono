@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/ec6f517b5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../header/css/header1.css"/>
-    <link rel="stylesheet" href="css/bearded_collie3.css"/>
+    <link rel="stylesheet" href="css/shihTzu.css"/>
   </head>
   <body>
 
@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-12 p-0">
           <?php 
-            $header = $bdd->query("SELECT * FROM beardedCollieFemelle_header");
+            $header = $bdd->query("SELECT * FROM shihTzuMale_header");
             $header_recu = $header->fetch();
           ?>
           <div class="header" style="background-image: url(<?php echo $header_recu['image']; ?>);">
@@ -30,7 +30,7 @@
       
       <div class="row mt-3 mb-3 ml-1 mr-1">
         <?php
-          $blockPresentation = $bdd->query("SELECT nom FROM beardedCollieFemelle_nomDuChien");
+          $blockPresentation = $bdd->query("SELECT nom FROM shihTzuMale_nomDuChien");
           while ($blockPresentation_recu = $blockPresentation->fetch()){
         ?>
         <div class="col-12 col-lg-6 p-0">
@@ -41,7 +41,7 @@
             <div id="<?php echo $blockPresentation_recu['nom']; ?>" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <?php
-                  $blockPresentation_firstImageSlider = $bdd->prepare("SELECT beardedCollieFemelle_blockPresentaionSlider.images FROM beardedCollieFemelle_blockPresentaionSlider, beardedCollieFemelle_nomDuChien WHERE beardedCollieFemelle_blockPresentaionSlider.id_nomDuChien=beardedCollieFemelle_nomDuChien.id AND beardedCollieFemelle_nomDuChien.nom=? AND beardedCollieFemelle_blockPresentaionSlider.position=1");
+                  $blockPresentation_firstImageSlider = $bdd->prepare("SELECT shihTzuMale_blockPresentaionSlider.images FROM shihTzuMale_blockPresentaionSlider, shihTzuMale_nomDuChien WHERE shihTzuMale_blockPresentaionSlider.id_nomDuChien=shihTzuMale_nomDuChien.id AND shihTzuMale_nomDuChien.nom=? AND shihTzuMale_blockPresentaionSlider.position=1");
                   $blockPresentation_firstImageSlider->execute(array($blockPresentation_recu['nom']));
                   while ($blockPresentation_firstImageSlider_recu = $blockPresentation_firstImageSlider->fetch()){
                 ?>
@@ -52,7 +52,7 @@
                   }
                 ?>
                 <?php
-                  $blockPresentation_slider = $bdd->prepare("SELECT beardedCollieFemelle_blockPresentaionSlider.images FROM beardedCollieFemelle_blockPresentaionSlider, beardedCollieFemelle_nomDuChien WHERE beardedCollieFemelle_blockPresentaionSlider.id_nomDuChien=beardedCollieFemelle_nomDuChien.id AND beardedCollieFemelle_nomDuChien.nom=? AND beardedCollieFemelle_blockPresentaionSlider.position!=1");
+                  $blockPresentation_slider = $bdd->prepare("SELECT shihTzuMale_blockPresentaionSlider.images FROM shihTzuMale_blockPresentaionSlider, shihTzuMale_nomDuChien WHERE shihTzuMale_blockPresentaionSlider.id_nomDuChien=shihTzuMale_nomDuChien.id AND shihTzuMale_nomDuChien.nom=? AND shihTzuMale_blockPresentaionSlider.position!=1");
                   $blockPresentation_slider->execute(array($blockPresentation_recu['nom']));
                   while ($blockPresentation_slider_recu = $blockPresentation_slider->fetch()){
                 ?>
@@ -84,7 +84,7 @@
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="profile_<?php echo $blockPresentation_recu['nom']; ?>" role="tabpanel" aria-labelledby="pills-home-tab">
                 <?php
-                  $blockPresentation_profile = $bdd->prepare("SELECT * FROM beardedCollieFemelle_blockPresentaionProfile, beardedCollieFemelle_nomDuChien WHERE beardedCollieFemelle_blockPresentaionProfile.id_nomDuChien=beardedCollieFemelle_nomDuChien.id AND beardedCollieFemelle_nomDuChien.nom=?");
+                  $blockPresentation_profile = $bdd->prepare("SELECT * FROM shihTzuMale_blockPresentaionProfile, shihTzuMale_nomDuChien WHERE shihTzuMale_blockPresentaionProfile.id_nomDuChien=shihTzuMale_nomDuChien.id AND shihTzuMale_nomDuChien.nom=?");
                   $blockPresentation_profile->execute(array($blockPresentation_recu['nom']));
                   while ($blockPresentation_profile_recu = $blockPresentation_profile->fetch()){
                 ?>
@@ -103,7 +103,7 @@
                 <div class="card" style="width: 100%;">
                   <ul class="list-group list-group-flush">
                   <?php
-                    $blockPresentation_resultat = $bdd->prepare("SELECT * FROM beardedCollieFemelle_blockPresentaionResultat, beardedCollieFemelle_nomDuChien WHERE beardedCollieFemelle_blockPresentaionResultat.id_nomDuChien=beardedCollieFemelle_nomDuChien.id AND beardedCollieFemelle_nomDuChien.nom=?");
+                    $blockPresentation_resultat = $bdd->prepare("SELECT * FROM shihTzuMale_blockPresentaionResultat, shihTzuMale_nomDuChien WHERE shihTzuMale_blockPresentaionResultat.id_nomDuChien=shihTzuMale_nomDuChien.id AND shihTzuMale_nomDuChien.nom=?");
                     $blockPresentation_resultat->execute(array($blockPresentation_recu['nom']));
                     while ($blockPresentation_resultat_recu = $blockPresentation_resultat->fetch()){
                   ?>

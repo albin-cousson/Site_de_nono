@@ -9827,4 +9827,13 @@ td {
   text-align: center;
 }
 
-/*# sourceMappingURL=admin5.css.map */
+tr:hover {
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+/*# sourceMappingURL=admin6.css.map */

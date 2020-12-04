@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/admin5.css"/>
+    <link rel="stylesheet" href="css/admin6.css"/>
   </head>
   <body class="d-flex flex-column justify-content-center align-items-center pb-5">
 
@@ -39,6 +39,15 @@
                             </a>
                             <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="./admin_beardedCollieMale.php">Mâle</a>
+                              <a class="dropdown-item" href="./admin_beardedCollieFemelle.php">Femelle</a>
+                            </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Shih-tzu
+                            </a>
+                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="./admin_shihTzuMale.php">Mâle</a>
                               <a class="dropdown-item" href="#">Femelle</a>
                             </div>
                           </li>
@@ -642,6 +651,15 @@
                             </a>
                             <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="./admin_beardedCollieMale.php">Mâle</a>
+                              <a class="dropdown-item" href="./admin_beardedCollieFemelle.php">Femelle</a>
+                            </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Shih-tzu
+                            </a>
+                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="./admin_shihTzuMale.php">Mâle</a>
                               <a class="dropdown-item" href="#">Femelle</a>
                             </div>
                           </li>

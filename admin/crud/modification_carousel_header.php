@@ -16,7 +16,8 @@
     $champ = $bdd->query("SHOW COLUMNS FROM $table");
     // foreign key "nom du chien"
     if (isset($_GET['foreignKey'])){
-      $foreignKey = $bdd->query("SELECT nom FROM beardedCollieMale_nomDuChien");
+      $table_foreignKey = $_GET['foreignKey'];
+      $foreignKey = $bdd->query("SELECT nom FROM $table_foreignKey");
     }
     //
     $id = $_GET['id'];
@@ -24,8 +25,8 @@
     $entre_recu = $entre->fetch();
     // foreign key "nom du chien"
     if (isset($_GET['foreignKey'])){
-      $nomDuChien = $bdd->prepare('SELECT nom FROM beardedCollieMale_nomDuChien WHERE id=?');
-      $nomDuChien->execute(array($entre_recu['id']));
+      $nomDuChien = $bdd->prepare('SELECT nom FROM ? WHERE id=?');
+      $nomDuChien->execute(array($_GET['foreignKey'], $entre_recu['id']));
       $nomDuChien_recu = $nomDuChien->fetch();
     }
     // 
@@ -76,4 +77,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="js/admin_ajout_modification1.js"></script>
   </body>
-</html>
+</html>;

@@ -16,7 +16,8 @@
     $champ = $bdd->query("SHOW COLUMNS FROM $table");
     // foreign key "nom du chien"
     if (isset($_GET['foreignKey'])){
-      $foreignKey = $bdd->query("SELECT nom FROM beardedCollieMale_nomDuChien");
+      $table_foreignKey = $_GET['foreignKey'];
+      $foreignKey = $bdd->query("SELECT nom FROM $table_foreignKey");
     }
     ?>
     <form method="POST" action="<?php echo $page; ?>" class="d-flex flex-column justify-content-center align-items-center position-absolute">
