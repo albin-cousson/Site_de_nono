@@ -42,7 +42,7 @@
                         <a class="sous-menu-link" href="../shih_tzu/male.php"> Nos mâles</a>
                       </li>
                       <li class="sous-menu-item">
-                        <a class="sous-menu-link"> Nos femelles</a>
+                        <a class="sous-menu-link" href="../shih_tzu/femelle.php"> Nos femelles</a>
                       </li>
                     </ul>
                   </li>
@@ -59,10 +59,10 @@
                         
                         <ul class="sous-sous-menu">
                           <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link"> Nos mâles</a>
+                            <a class="sous-sous-menu-link" href="../chiots_bearded_collie/male.php"> Nos mâles</a>
                           </li>
                           <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link"> Nos femelles</a>
+                            <a class="sous-sous-menu-link" href="../chiots_bearded_collie/femelle.php"> Nos femelles</a>
                           </li>
                         </ul>
                       </li>
@@ -72,10 +72,10 @@
 
                         <ul class="sous-sous-menu">
                           <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link"> Nos mâles</a>
+                            <a class="sous-sous-menu-link" href="../chiots_shih_tzu/male.php"> Nos mâles</a>
                           </li>
                           <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link"> Nos femelles</a>
+                            <a class="sous-sous-menu-link" href="../chiots_shih_tzu/femelle.php"> Nos femelles</a>
                           </li>
                         </ul>
                       </li>
@@ -145,7 +145,7 @@
                     <a class="containerMenuResponsive__page__nav__ul__li__a__sousMenu__a nav-link" href="../shih_tzu/male.php">Nos mâle</a>
                   </li>
                   <li class="containerMenuResponsive__page__sousMenu__sousSousMenu nav-item">
-                    <a class="containerMenuResponsive__page__nav__ul__li__a__sousMenu__a nav-link ">Nos femelles</a>
+                    <a class="containerMenuResponsive__page__nav__ul__li__a__sousMenu__a nav-link" href="../shih_tzu/femelle.php">Nos femelles</a>
                   </li>
                 </ul>
               </div>
@@ -164,10 +164,10 @@
                     <div class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div">
                       <ul class="navbar-nav">
                         <li class=" nav-item">
-                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark">Nos mâle</a>
+                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark" href="../chiots_bearded_collie/male.php">Nos mâle</a>
                         </li>
                         <li class=" nav-item">
-                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark">Nos femelles</a>
+                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark" href="../chiots_bearded_collie/femelle.php">Nos femelles</a>
                         </li>
                       </ul>
                     </div>
@@ -179,10 +179,10 @@
                     <div class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div">
                       <ul class="navbar-nav">
                         <li class=" nav-item">
-                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark">Nos mâle</a>
+                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark" href="../chiots_shih_tzu/male.php">Nos mâle</a>
                         </li>
                         <li class=" nav-item">
-                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark">Nos femelles</a>
+                          <a class="containerMenuResponsive__page__sousMenu__sousSousSousMenu__div__a nav-link text-dark" href="../chiots_shih_tzu/femelle.php">Nos femelles</a>
                         </li>
                       </ul>
                     </div>

@@ -21,43 +21,9 @@
         while ($connexion_recu = $connexion->fetch()){
           if (isset($_POST['pseudo'])) {
             if ($connexion_recu["pseudo"] == $_POST['pseudo'] && $connexion_recu["mot_de_passe"] == $_POST['mot_de_passe'] || $_COOKIE['pseudo'] == $connexion_recu['pseudo'] && $_COOKIE['mot_de_passe'] == $connexion_recu['mot_de_passe']){
+              include("header.php");
               ?>
-                <!--<--<--<--<--<--<--<--<--<--<--<--<-- Navbar -->
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-12 p-0">
-                    <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark">
-                        <ul class="navbar-nav d-flex flex-row">
-                          <li class="nav-item">
-                            <a class="nav-link mr-3" href="./admin_accueil.php">
-                              Accueil
-                            </a>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Bearded collie
-                            </a>
-                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="./admin_beardedCollieMale.php">Mâle</a>
-                              <a class="dropdown-item" href="./admin_beardedCollieFemelle.php">Femelle</a>
-                            </div>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Shih-tzu
-                            </a>
-                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="./admin_shihTzuMale.php">Mâle</a>
-                              <a class="dropdown-item" href="#">Femelle</a>
-                            </div>
-                          </li>
-                        </ul>
-                        <a class="btn btn-light" href="deconexion.php">
-                          Deconexion
-                        </a>
-                      </nav>
-                    </div>
-                  </div>
+               <!--<--<--<--<--<--<--<--<--<--<--<--<-- Navbar -->
 
                   <!--<--<--<--<--<--<--<--<--<--<--<--<-- header -->
                   <div class="row">
@@ -403,44 +369,9 @@
           }
           elseif (!isset($_POST['pseudo'])) {
             if ($_COOKIE['pseudo'] == $connexion_recu['pseudo'] && $_COOKIE['mot_de_passe'] == $connexion_recu['mot_de_passe']){
+              include("header.php");
               ?>
-                <!--<--<--<--<--<--<--<--<--<--<--<--<-- Navbar -->
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-12 p-0">
-                      <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark">
-                        <ul class="navbar-nav d-flex flex-row">
-                          <li class="nav-item">
-                            <a class="nav-link mr-3" href="./admin_accueil.php">
-                              Accueil
-                            </a>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Bearded collie
-                            </a>
-                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="./admin_beardedCollieMale.php">Mâle</a>
-                              <a class="dropdown-item" href="./admin_beardedCollieFemelle.php">Femelle</a>
-                            </div>
-                          </li>
-                          <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Shih-tzu
-                            </a>
-                            <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="./admin_shihTzuMale.php">Mâle</a>
-                              <a class="dropdown-item" href="#">Femelle</a>
-                            </div>
-                          </li>
-                        </ul>
-                        <a class="btn btn-light" href="deconexion.php">
-                          Deconexion
-                        </a>
-                      </nav>
-                    </div>
-                  </div>
-
+               
                   <!--<--<--<--<--<--<--<--<--<--<--<--<-- header -->
                   <div class="row">
                     <div class="col-12 mt-5">
