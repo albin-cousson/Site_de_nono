@@ -90,7 +90,7 @@
                 </li>
                 
                 <li class="contact-nav-item nav-item active mx-2">
-                  <a class="contact-nav-link nav-link" href="#">Nous contacter</a>
+                  <a class="contact-nav-link nav-link" href="../contact/contact.php">Nous contacter</a>
                 </li>
 
               </ul>
@@ -199,7 +199,7 @@
             </li>
 
             <li class="nav-item w-100 py-2">
-              <a class="containerMenuResponsive__page__nav__ul__li__a containerMenuResponsive__page__nav__ul__li__a--contact border-top border-bottom border-dark nav-link py-3">
+              <a class="containerMenuResponsive__page__nav__ul__li__a containerMenuResponsive__page__nav__ul__li__a--contact border-top border-bottom border-dark nav-link py-3" href="../contact/contact.php">
                 Nous contacter
               </a>
             </li>

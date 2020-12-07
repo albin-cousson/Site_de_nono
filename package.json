@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch scss/pages/male-femelle.scss:shih_tzu/css/shihTzu.css"
+    "sass": "sass --watch scss/pages/contact.scss:contact/css/contact.css"
   },
   "keywords": [],
   "author": "",

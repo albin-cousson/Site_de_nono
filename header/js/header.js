@@ -72,7 +72,7 @@ masque_body.addEventListener("click", function(){
     open_sous_sous_menu[0].classList.remove("sous-sous-menu-actif")
     open_sous_sous_menu[1].classList.remove("sous-sous-menu-actif")
 })
-///fonction qui fait disparatire les sous-sous-menu lors du clique sur la un menu
+///fonction qui fait disparatire les sous-sous-menu lors du clique sur un menu
 sous_menu[0].addEventListener("click", function(){
     if (sous_menu[0].classList.contains("sous-menu-actife")){
         open_sous_sous_menu[0].classList.remove("sous-sous-menu-actif")

@@ -45,6 +45,11 @@
                               <a class="dropdown-item" href="./admin_ChiotsshihTzuFemelle.php">Femelle</a>
                             </div>
                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link mr-3" href="./contact.php">
+                              Contact
+                            </a>
+                          </li>
                         </ul>
                         <a class="btn btn-light" href="deconexion.php">
                           Deconexion
