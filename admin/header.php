@@ -51,9 +51,14 @@
                             </a>
                           </li>
                         </ul>
-                        <a class="btn btn-light" href="deconexion.php">
-                          Deconexion
-                        </a>
+                        <div>
+                          <a class="btn btn-light" href="messagerie.php">
+                            Messagerie
+                          </a>
+                          <a class="btn btn-light" href="deconexion.php">
+                            Deconexion
+                          </a>
+                        </div>
                       </nav>
                     </div>
                   </div>

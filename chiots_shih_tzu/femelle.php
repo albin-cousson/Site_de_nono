@@ -12,6 +12,11 @@
     <?php 
         include ("../bdd.php");
         include ("../header/header.php");
+
+        if (isset($_POST['nom'])){
+          $ajoutMessage = $bdd->prepare("INSERT INTO messagerie(nom, prenom, mail, message) VALUES (?,?,?,?)");
+          $ajoutMessage->execute(array($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['message']));
+        }
     ?>
     
     <div class="container-fluid">
@@ -104,19 +109,19 @@
                   <p class="h3 text-dark mb-3">Envoyez-nous un message</p>
                   <div class="form-group">
                     <label for="">Votre nom</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="nom" class="form-control lead_perso">
                   </div>
                   <div class="form-group">
                     <label for="">Votre prénom</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="prenom" class="form-control lead_perso">
                   </div>
                   <div class="form-group">
                     <label for="">Votre mail</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="mail" class="form-control lead_perso">
                   </div>
                   <div class="form-group">
                     <label for="">Votre message</label>
-                    <textarea type="text" class="form-control"></textarea>
+                    <textarea type="text" name="message" class="form-control lead_perso"></textarea>
                   </div>
                   <input type="submit" value="Résèrver" class="btn btn-primary text-light">
                   

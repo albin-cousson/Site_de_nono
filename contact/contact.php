@@ -12,6 +12,11 @@
     <?php 
         include ("../bdd.php");
         include ("../header/header.php");
+
+        if (isset($_POST['nom'])){
+            $ajoutMessage = $bdd->prepare("INSERT INTO messagerie(nom, prenom, mail, message) VALUES (?,?,?,?)");
+            $ajoutMessage->execute(array($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['message']));
+        }
     ?>
 
     <div class="container-fluid">
