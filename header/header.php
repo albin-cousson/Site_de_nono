@@ -86,7 +86,7 @@
                 </div>
                 
                 <li class="nav-item active mx-2">
-                  <a class="nav-link" href="#">Nos actus</a>
+                  <a class="nav-link" href="../blog/blog.php?page_article=1">Nos actus</a>
                 </li>
                 
                 <li class="contact-nav-item nav-item active mx-2">
@@ -193,7 +193,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="containerMenuResponsive__page__nav__ul__li__a nav-link">
+              <a class="containerMenuResponsive__page__nav__ul__li__a nav-link" href="../blog/blog.php?page_article=1">
                 Nos actus
               </a>
             </li>

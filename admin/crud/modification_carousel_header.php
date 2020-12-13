@@ -60,6 +60,7 @@
       <div class="form-group d-flex flex-column justify-content-center align-items-center w-100">
         <label class="h5 text-light"><?php echo ucfirst($champ_recu['Field']) ?></label>
         <input type="text" name="<?php echo $champ_recu['Field'] ?>" value="<?php echo $entre_recu[$i]; ?>"/>
+        
       </div>
     <?php
     }

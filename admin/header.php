@@ -46,6 +46,11 @@
                             </div>
                           </li>
                           <li class="nav-item">
+                            <a class="nav-link mr-3" href="./blog.php">
+                              Blog
+                            </a>
+                          </li>
+                          <li class="nav-item">
                             <a class="nav-link mr-3" href="./contact.php">
                               Contact
                             </a>
