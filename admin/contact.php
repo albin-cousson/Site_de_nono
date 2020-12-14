@@ -1,8 +1,5 @@
 <?php 
-  if (isset($_POST['pseudo']) && isset($_POST['mot_de_passe'])){
-    setcookie('pseudo', $_POST['pseudo'], time() + 3600);
-    setcookie('mot_de_passe', $_POST['mot_de_passe'], time() + 3600);
-  }
+  session_start();
 ?>
 <!doctype html>
 <html lang="fr">
@@ -17,155 +14,81 @@
 
         include("../bdd.php");
 
-        $connexion = $bdd->query("SELECT pseudo, mot_de_passe FROM admin");
-        while ($connexion_recu = $connexion->fetch()){
-          if (isset($_POST['pseudo'])) {
-            if ($connexion_recu["pseudo"] == $_POST['pseudo'] && $connexion_recu["mot_de_passe"] == $_POST['mot_de_passe'] || $_COOKIE['pseudo'] == $connexion_recu['pseudo'] && $_COOKIE['mot_de_passe'] == $connexion_recu['mot_de_passe']){
-              include("header.php");
-              ?>
+        $connexion = $bdd->prepare("SELECT pseudo, mot_de_passe FROM admin WHERE pseudo=?");
+        $connexion->execute(array($_SESSION['pseudo']));
+        $connexion_recu = $connexion->fetch();
+        if ($_SESSION['pseudo'] == $connexion_recu['pseudo'] && password_verify($_SESSION['mot_de_passe'], $connexion_recu['mot_de_passe'])){
+          include("header.php");
+          ?>
 
-              <!--<--<--<--<--<--<--<--<--<--<--<--<-- Image -->
-              <div class="row">
-                    <div class="col-12 mt-5">
-                      <div class="m-auto w-75">
-                        <table class="w-100">
-                          <caption class="position-relative">
-                            <div class="position-absolute"></div>
-                            <nav class="navbar p-0">
-                              <p class="h1 text-light m-0 position-relative">Images</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../contact.php&table=contact">Ajouter</a>
-                            </nav>
-                          </caption>
-                          <?php
-                              ?>
-                                <th>Image</th>
-                                <th>Image responsive</th>
-                              <?php
-                              ?>
-                                <th>Modifier</th>
-                                <th>Supprimer</th>
-                              <?php
-                            $entres = $bdd->query("SELECT image, image_responsive, id FROM contact");
-                            while($entres_recu = $entres->fetch()){
-                              ?>
-                                <tr>
-                                  <td>
-                                    <?php echo substr($entres_recu['image'],0,30)."..." ?>
-                                  </td>
-                                  <td>
-                                    <?php echo substr($entres_recu['image_responsive'],0,30)."..." ?>
-                                  </td>
-                                  <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../contact.php&table=contact&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
-                                  </td>
-                                  <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../contact.php&table=contact&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
-                                  </td>
-                                </tr>
-                              <?php
-                            }
+          <!--<--<--<--<--<--<--<--<--<--<--<--<-- Image -->
+          <div class="row">
+                <div class="col-12 mt-5">
+                  <div class="m-auto w-75">
+                    <table class="w-100">
+                      <caption class="position-relative">
+                        <div class="position-absolute"></div>
+                        <nav class="navbar p-0">
+                          <p class="h1 text-light m-0 position-relative">Images</p>
+                          <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../contact.php&table=contact">Ajouter</a>
+                        </nav>
+                      </caption>
+                      <?php
                           ?>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-                <!-- Ajout -->
-                <?php
-                if (isset($_POST['contact'])){
-                  $ajout = $bdd->prepare("INSERT INTO contact(image, image_responsive) VALUE (?,?)");
-                  $ajout->execute(array($_POST['image'], $_POST['image_responsive'])); 
-                }
-                ?>
-
-                <!-- Modification -->
-                <?php
-                if (isset($_GET['contact'])){
-                  $modification = $bdd->prepare("UPDATE contact SET image=?, image_responsive=? WHERE id=?");
-                  $modification->execute(array($_GET['image'], $_POST['image_responsive'], $_GET['id'])); 
-                }
-                ?>
-
-              <?php
-            }
-            else {
-                header("location:erreur_connexion.php");
-            }
-          }
-          elseif (!isset($_POST['pseudo'])) {
-            if ($_COOKIE['pseudo'] == $connexion_recu['pseudo'] && $_COOKIE['mot_de_passe'] == $connexion_recu['mot_de_passe']){
-              include("header.php");
-              ?>
-
-              <!--<--<--<--<--<--<--<--<--<--<--<--<-- Image -->
-              <div class="row">
-                    <div class="col-12 mt-5">
-                      <div class="m-auto w-75">
-                        <table class="w-100">
-                          <caption class="position-relative">
-                            <div class="position-absolute"></div>
-                            <nav class="navbar p-0">
-                              <p class="h1 text-light m-0 position-relative">Images</p>
-                              <a class="btn btn-outline-light position-relative" href="crud/ajout_carousel_header.php?page=../contact.php&table=contact">Ajouter</a>
-                            </nav>
-                          </caption>
+                            <th>Image</th>
+                            <th>Image responsive</th>
                           <?php
-                              ?>
-                                <th>Image</th>
-                                <th>Image responsive</th>
-                              <?php
-                              ?>
-                                <th>Modifier</th>
-                                <th>Supprimer</th>
-                              <?php
-                            $entres = $bdd->query("SELECT image, image_responsive, id FROM contact");
-                            while($entres_recu = $entres->fetch()){
-                              ?>
-                                <tr>
-                                  <td>
-                                    <?php echo substr($entres_recu['image'],0,30)."..." ?>
-                                  </td>
-                                  <td>
-                                    <?php echo substr($entres_recu['image_responsive'],0,30)."..." ?>
-                                  </td>
-                                  <td>
-                                    <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../contact.php&table=contact&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
-                                  </td>
-                                  <td>
-                                    <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../contact.php&table=contact&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
-                                  </td>
-                                </tr>
-                              <?php
-                            }
                           ?>
-                        </table>
-                      </div>
-                    </div>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                          <?php
+                        $entres = $bdd->query("SELECT image, image_responsive, id FROM contact");
+                        while($entres_recu = $entres->fetch()){
+                          ?>
+                            <tr>
+                              <td>
+                                <?php echo substr($entres_recu['image'],0,30)."..." ?>
+                              </td>
+                              <td>
+                                <?php echo substr($entres_recu['image_responsive'],0,30)."..." ?>
+                              </td>
+                              <td>
+                                <a class="btn btn-outline-success" href="crud/modification_carousel_header.php?page=../contact.php&table=contact&id=<?php echo $entres_recu['id'] ?>">Modifier</a>
+                              </td>
+                              <td>
+                                <a class="btn btn-outline-danger" href="crud/suppression_carousel_header.php?page=../contact.php&table=contact&id=<?php echo $entres_recu['id'] ?>">Supprimer</a>
+                              </td>
+                            </tr>
+                          <?php
+                        }
+                      ?>
+                    </table>
                   </div>
+                </div>
+              </div>
 
-                <!-- Ajout -->
-                <?php
-                if (isset($_POST['contact'])){
-                  $ajout = $bdd->prepare("INSERT INTO contact(image, image_responsive) VALUE (?,?)");
-                  $ajout->execute(array($_POST['image'], $_POST['image_responsive'])); 
-                }
-                ?>
-
-                <!-- Modification -->
-                <?php
-                if (isset($_GET['contact'])){
-                  $modification = $bdd->prepare("UPDATE contact SET image=?, image_responsive=? WHERE id=?");
-                  $modification->execute(array($_GET['image'], $_GET['image_responsive'], $_GET['id'])); 
-                }
-                ?>
-
-              <?php
+            <!-- Ajout -->
+            <?php
+            if (isset($_POST['contact'])){
+              $ajout = $bdd->prepare("INSERT INTO contact(image, image_responsive) VALUE (?,?)");
+              $ajout->execute(array($_POST['image'], $_POST['image_responsive'])); 
             }
-            else {
-                header("location:erreur_connexion.php");
+            ?>
+
+            <!-- Modification -->
+            <?php
+            if (isset($_GET['contact'])){
+              $modification = $bdd->prepare("UPDATE contact SET image=?, image_responsive=? WHERE id=?");
+              $modification->execute(array($_GET['image'], $_GET['image_responsive'], $_GET['id'])); 
             }
+            ?>
+
+          <?php
         }
-    }
+        else {
+            header("location:erreur_connexion.php");
+        }
+
 ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

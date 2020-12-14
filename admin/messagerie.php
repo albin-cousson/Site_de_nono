@@ -1,8 +1,5 @@
 <?php 
-  if (isset($_POST['pseudo']) && isset($_POST['mot_de_passe'])){
-    setcookie('pseudo', $_POST['pseudo'], time() + 3600);
-    setcookie('mot_de_passe', $_POST['mot_de_passe'], time() + 3600);
-  }
+  session_start();
 ?>
 <!doctype html>
 <html lang="fr">
@@ -19,8 +16,8 @@
 
         $connexion = $bdd->query("SELECT pseudo, mot_de_passe FROM admin");
         while ($connexion_recu = $connexion->fetch()){
-          if (isset($_POST['pseudo'])) {
-            if ($connexion_recu["pseudo"] == $_POST['pseudo'] && $connexion_recu["mot_de_passe"] == $_POST['mot_de_passe'] || $_COOKIE['pseudo'] == $connexion_recu['pseudo'] && $_COOKIE['mot_de_passe'] == $connexion_recu['mot_de_passe']){
+          if (isset($_POST['pseudo']) && isset($_POST['mot_de_passe'])) {
+            if ($_POST['pseudo'] == $connexion_recu["pseudo"] && password_verify($_POST['mot_de_passe'], $connexion_recu["mot_de_passe"])){
               include("header.php");
               ?>
 
@@ -78,9 +75,9 @@
                 header("location:erreur_connexion.php");
             }
           }
-          elseif (!isset($_POST['pseudo'])) {
-            if ($_COOKIE['pseudo'] == $connexion_recu['pseudo'] && $_COOKIE['mot_de_passe'] == $connexion_recu['mot_de_passe']){
-            include("header.php");
+          elseif (!isset($_POST['pseudo']) && !isset($_POST['mot_de_passe'])) {
+            if ($_SESSION['pseudo'] == $connexion_recu['pseudo'] && password_verify($_SESSION['mot_de_passe'], $connexion_recu['mot_de_passe'])){
+              include("header.php");
               ?>
 
                 <div class="row">

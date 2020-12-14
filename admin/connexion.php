@@ -1,3 +1,11 @@
+<?php 
+  if(isset($_POST['pseudo']) && isset($_POST['mot_de_passe'])) {
+    session_start();
+    $_SESSION['pseudo'] = $_POST['pseudo'];
+    $_SESSION['mot_de_passe'] = $_POST['mot_de_passe'];
+    header("location:admin_accueil.php");
+  }
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -9,7 +17,7 @@
 
     <nav class="navbar bg-dark text-light"> <h3 class="w-100 m-0 text-center">BIENVENUE SUR TON ESPACE ADMINISTRATION NONO ! </h3></nav>
 
-    <form class="d-flex flex-column justify-content-center align-items-center position-absolute bg-dark" method="post" action="admin_accueil.php">
+    <form class="d-flex flex-column justify-content-center align-items-center position-absolute bg-dark" method="post" action="">
         <div class="form-group d-flex flex-column justify-content-center align-items-center w-100">
             <label class="h5 text-light">Pseudo</label>
             <input type="text" name="pseudo">

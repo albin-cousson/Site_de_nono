@@ -87,7 +87,7 @@
         <div id="first_article" class="swiper-container d-none d-xl-block pt-5 pb-5">
           <div class="swiper-wrapper">
             <?php
-            $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)>=MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC");
+            $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, id, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)>=MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC");
               while($article_recu = $article->fetch()){
             ?>
             <div class="swiper-slide">
@@ -102,7 +102,7 @@
                     <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par <?php echo $article_recu['redacteur'] ?> </p>
                   </div>
                   <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-primary card_text_perso"> Lire l'article </a>
+                    <a class="btn btn-outline-primary card_text_perso" href="./article.php?article=<?php echo $article_recu['id'] ?>"> Lire l'article </a>
                     <i class="fab fa-instagram card_icone_perso pl-4"></i>
                   </div>
                 </div>
@@ -123,7 +123,7 @@
       <div id="first_article_responsive" class="swiper-container-responsive d-xl-none pt-5 pl-3 pr-3">
         <div class="swiper-wrapper">
           <?php
-          $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)>=MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC");
+          $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, id, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)>=MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC");
             while($article_recu = $article->fetch()){
           ?>
             <div class="swiper-slide">
@@ -138,7 +138,7 @@
                     <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par <?php echo $article_recu['redacteur'] ?> </p>
                   </div>
                   <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-primary card_text_perso"> Lire l'article </a>
+                    <a class="btn btn-outline-primary card_text_perso" href="./article.php?article=<?php echo $article_recu['id'] ?>"> Lire l'article </a>
                     <i class="fab fa-instagram card_icone_perso pl-4"></i>
                   </div>
                 </div>
@@ -182,7 +182,7 @@
               $cur_pages_article = 1;
           }
 
-          $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)<MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC LIMIT ".(($cur_pages_article-1)*$per_pages_article).",$per_pages_article");
+          $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, id, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)<MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC LIMIT ".(($cur_pages_article-1)*$per_pages_article).",$per_pages_article");
             while($article_recu = $article->fetch()){
           ?>
             <div class="col-12 col-xl-4 pb-5">
@@ -197,7 +197,7 @@
                     <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par <?php echo $article_recu['redacteur'] ?> </p>
                   </div>
                   <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-primary card_text_perso"> Lire l'article </a>
+                    <a class="btn btn-outline-primary card_text_perso" href="./article.php?article=<?php echo $article_recu['id'] ?>"> Lire l'article </a>
                     <i class="fab f=a-instagram card_icone_perso pl-4"></i>
                   </div>
                 </div>

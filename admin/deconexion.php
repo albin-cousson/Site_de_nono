@@ -1,6 +1,6 @@
 <?php
 
-setcookie('pseudo', $_POST['pseudo'], time() + -1);
-setcookie('mot_de_passe', $_POST['mot_de_passe'], time() + -1);
+session_start();
+session_destroy();
 
 header('location:connexion.php');
