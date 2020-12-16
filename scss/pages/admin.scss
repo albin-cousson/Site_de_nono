@@ -53,3 +53,33 @@ tr:hover{
 tr:hover{
     background-color: rgb(240, 240, 240);
 }
+.pop-up{
+    display: none;
+    border: 1px solid #343a40;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 8px 20px #bdbdbd;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    &__close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    &__group{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    &__titre {
+        margin-bottom: 8px;
+        color: #343a40;
+    }
+    &__contenu{
+        margin: 0;
+        color: grey;
+    }
+}
