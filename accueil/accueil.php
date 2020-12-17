@@ -13,14 +13,57 @@
     
     include ("../bdd.php");
     include ("../header/header.php");
-
+    function transformDateNumberToDateLetter($mois){
+      for($i=1;$i<13;$i++){
+       if($i == $mois) {
+         switch($mois){
+          case 1:
+            return $mois = "JANVIER";
+            break;
+          case 2:
+            return $mois = "FERVRIER";
+            break;
+          case 3:
+            return $mois = "MARS";
+            break;
+          case 4:
+            return $mois = "AVRIL";
+            break;
+          case 5:
+            return $mois = "MAI";
+            break;
+          case 6:
+            return $mois = "JUIN";
+            break;
+          case 7:
+            return $mois = "JUILLET";
+            break;
+          case 8:
+            return $mois = "AOUT";
+            break;
+          case 9:
+            return $mois = "SEPTEMBRE";
+            break;
+          case 10:
+            return $mois = "OCTOBRE";
+            break;
+          case 11:
+            return $mois = "NOVEMBRE";
+            break;
+          case 12:
+            return $mois = "DECEMBRE";
+            break;
+         }
+       }
+      }
+    }
     ?>
 
     <!-- CAROUSEL HEADER -->
 
     <div class="container-fluid">
       
-      <div class="row">
+      <div class="header_pc row d-none d-xl-flex">
 
         <div class="col-12 col-xl-6 d-none d-xl-block p-0">
           <div id="carousel_header" class="carousel slide" data-ride="carousel">
@@ -30,19 +73,13 @@
                 $first_carousel_header = $bdd->query("SELECT url_image FROM accueil_image_header WHERE position=1");
                 $first_image_carousel_recu = $first_carousel_header->fetch();
               ?>
-              <div class="carousel-item active">
-                <img src="<?php echo $first_image_carousel_recu['url_image']; ?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
-              </div>
+              <div class="carousel-item active" style="background-image: url(<?php echo $first_image_carousel_recu['url_image']; ?>);"></div>
 
               <?php 
                 $carousel_header = $bdd->query("SELECT url_image FROM accueil_image_header WHERE position!=1");
                 while ($carousel_header_recu = $carousel_header->fetch()){
               ?>
-
-              <div class="carousel-item">
-                <img src="<?php echo $carousel_header_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
-              </div>
-
+              <div class="carousel-item"  style="background-image: url(<?php echo $carousel_header_recu['url_image']; ?>);"></div>
               <?php
                 } 
               ?>
@@ -66,7 +103,7 @@
           $cadre_header_recu = $cadre_header->fetch();
         ?>
 
-        <div class="col-12 col-xl-6 d-none d-xl-flex flex-column justify-content-center align-items-center p-0 bg-primary">
+        <div class="col-12 col-xl-6 d-none d-xl-flex flex-column justify-content-center align-items-center p-4 bg-primary">
           <div cless="cadre_header">
             <h1 class="w-100 p-0 display-4 text-center text-light      cadre_header__title"><?php echo $cadre_header_recu['titre']?></h1>
             <p class="lead w-100 mb-4 p-4 text-center text-light"><?php echo $cadre_header_recu['text']?></p>
@@ -83,10 +120,8 @@
           $image_header_responsive_recu = $image_header_responsive->fetch();
       ?>
 
-      <div class="row">
-        <div class="col-12 p-0 d-block d-xl-none">
-          <img class="p-0" src="<?php echo $image_header_responsive_recu['url_image']?>"alt="..." width="100%">
-        </div>
+      <div class="row image_header_responsive">
+        <div class="col-12 p-0 d-block d-xl-none" style="background-image:url(<?php echo $image_header_responsive_recu['url_image']?>);"></div>
       </div>
 
     <!-- jumbotron -->
@@ -108,7 +143,7 @@
       </div>
 
     <!-- CAROUSEL PRESENTATION CHIENS (EN DESSOUS DU JUMBOTRON) -->
-      <div class="row">
+      <div class="row slider_presentation_chien">
         <div class="col-12 col-xl-4 p-0">
           <div id="first_carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel__masque w-100 h-100 position-absolute"></div>
@@ -119,9 +154,8 @@
                 $first_presentation_bearded_recu = $first_presentation_bearded->fetch();
               ?>
 
-              <div class="carousel-item active">
+              <div class="carousel-item active" style="background-image: url(<?php echo $first_presentation_bearded_recu['url_image']; ?>);">
                 <p class="position-absolute w-75 text-center text-light"><?php echo $first_presentation_bearded_recu['nom']?></p>
-                <img src="<?php echo $first_presentation_bearded_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
               </div>
 
               <?php 
@@ -129,9 +163,8 @@
                 while ($presentation_bearded_recu = $presentation_bearded->fetch()){
               ?>
 
-              <div class="carousel-item">
+              <div class="carousel-item" style="background-image: url(<?php echo $presentation_bearded_recu['url_image']; ?>);">
                 <p class="position-absolute w-75 text-center text-light"><?php echo $presentation_bearded_recu['nom']?></p>
-                <img src="<?php echo $presentation_bearded_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
               </div>
 
               <?php
@@ -160,9 +193,8 @@
                 $first_presentation_shihshih_recu = $first_presentation_shihshih->fetch();
               ?>
 
-              <div class="carousel-item active">
+              <div class="carousel-item active" style="background-image: url(<?php echo $first_presentation_shihshih_recu['url_image']; ?>);">
                 <p class="position-absolute w-75 text-center text-light"><?php echo $first_presentation_shihshih_recu['nom']?></p>
-                <img src="<?php echo $first_presentation_shihshih_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
               </div>
 
               <?php 
@@ -170,9 +202,8 @@
                 while ($presentation_shihshih_recu = $presentation_shihshih->fetch()){
               ?>
               
-              <div class="carousel-item">
+              <div class="carousel-item" style="background-image: url(<?php echo $presentation_shihshih_recu['url_image']; ?>);">
                 <p class="position-absolute w-75 text-center text-light"><?php echo $presentation_shihshih_recu['nom']?></p>
-                <img src="<?php echo $presentation_shihshih_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
               </div>
 
               <?php
@@ -201,9 +232,8 @@
                 $first_presentation_chiots_recu = $first_presentation_chiots->fetch();
               ?>
 
-              <div class="carousel-item active">
+              <div class="carousel-item active" style="background-image: url(<?php echo $first_presentation_chiots_recu['url_image']; ?>);">
                 <p class="position-absolute w-75 text-center text-light"><?php echo $first_presentation_chiots_recu['nom']?></p>
-                <img src="<?php echo $first_presentation_chiots_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
               </div>
 
               <?php 
@@ -211,9 +241,8 @@
                 while ($presentation_chiots_recu = $presentation_chiots->fetch()){
               ?>
 
-              <div class="carousel-item">
+              <div class="carousel-item" style="background-image: url(<?php echo $presentation_chiots_recu['url_image']; ?>);">
                 <p class="position-absolute w-75 text-center text-light"><?php echo $presentation_chiots_recu['nom']?></p>
-                <img src="<?php echo $presentation_chiots_recu['url_image']?>" class="d-block w-100" alt="images_de_maginfiques_petits_chiots">
               </div>
 
               <?php
@@ -251,75 +280,38 @@
       </div>
 
     <!-- actus -->
-      <div class="row w-100 m-auto">
+    <div class="row w-100 m-auto">
         <div class="card-group">
+          <?php
+          $article = $bdd->query("SELECT header, titre, text, redacteur, image_du_redacteur, id, EXTRACT(day FROM date) AS jour, EXTRACT(month FROM date) AS mois, EXTRACT(year FROM date) AS annee FROM article WHERE EXTRACT(month FROM date)>=MONTH(NOW())-1 ORDER BY EXTRACT(month FROM date) DESC, EXTRACT(day FROM date) DESC LIMIT 3");
+            while($article_recu = $article->fetch()){
+          ?>
           <div class="col-12 col-xl-4 p-0">
-              <div class="card h-100">
-                <img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title card_title_perso">Card title</h5>
-                  <p class="card-text card_text_perso m-0">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <img class="card-body__zigzag" src="images/zigzag.svg" alt="" width="50px"/>
-                  <div class="d-flex pb-3 align-items-center">
-                    <img class="card-body__redigé_par_nono" src="https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_960_720.jpg" alt="" width="50px" height="50px"/>
-                    <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par Arnaud Cousson </p>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-primary card_text_perso"> Lire l'article </a>
-                    <i class="fab fa-instagram card_icone_perso pl-4"></i>
-                  </div>
+            <div class="card h-100">
+              <img src="<?php echo $article_recu['header'] ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title card_title_perso"><?php echo $article_recu['titre'] ?></h5>
+                <p class="card-text card_text_perso m-0"><?php echo substr($article_recu['text'], 0, 200)."..." ?></p>
+                <img class="card-body__zigzag" src="images/zigzag.svg" alt="" width="50px"/>
+                <div class="d-flex pb-4 align-items-center">
+                  <img class="card-body__redigé_par_nono" src="<?php echo $article_recu['image_du_redacteur'] ?>" alt="" width="50px" height="50px"/>
+                  <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par <?php echo $article_recu['redacteur'] ?> </p>
                 </div>
-                <div class="card-footer">
-                  <small class="text-muted card_text_perso">Last updated 3 mins ago</small>
+                <div class="d-flex align-items-center">
+                  <a class="btn btn-outline-primary card_text_perso" href="../blog/article.php?article=<?php echo $article_recu['id'] ?>"> Lire l'article </a>
+                  <i class="fab fa-instagram card_icone_perso pl-4"></i>
                 </div>
               </div>
-            </div>
-
-            <div class="col-12 col-xl-4 p-0">
-              <div class="card h-100">
-              <img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title card_title_perso">Card title</h5>
-                  <p class="card-text card_text_perso m-0">This card has supporting text below as a natural lead-in to additional content.</p>
-                  <img class="card-body__zigzag" src="images/zigzag.svg" alt="" width="50px"/>
-                  <div class="d-flex pb-3 align-items-center">
-                    <img class="card-body__redigé_par_nono" src="https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_960_720.jpg" alt="" width="50px" height="50px"/>
-                    <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par Arnaud Cousson </p>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-primary card_text_perso"> Lire l'article </a>
-                    <i class="fab fa-instagram card_icone_perso pl-4"></i>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted card_text_perso">Last updated 3 mins ago</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-xl-4 p-0">
-              <div class="card h-100">
-                <img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title card_title_perso">Card title</h5>
-                  <p class="card-text card_text_perso m-0">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                  <img class="card-body__zigzag" src="images/zigzag.svg" alt="" width="50px"/>
-                  <div class="d-flex pb-3 align-items-center">
-                    <img class="card-body__redigé_par_nono" src="https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_960_720.jpg" alt="" width="50px" height="50px"/>
-                    <p class="m-0 pl-3 text-muted card_text_perso">Rédigé par Arnaud Cousson </p>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <a class="btn btn-outline-primary card_text_perso"> Lire l'article </a>
-                    <i class="fab fa-instagram card_icone_perso pl-4"></i>
-                  </div>
-                </div>
               <div class="card-footer">
-                <small class="text-muted card_text_perso">Last updated 3 mins ago</small>
+                <small class="text-muted card_text_perso"><?php echo $article_recu['jour']." ".transformDateNumberToDateLetter($article_recu['mois'])." ".$article_recu['annee'] ?></small>
               </div>
             </div>
           </div>
-        </div>
+          <?php
+            }
+          ?>
       </div>
+    </div>
 
     <!-- jumbotron -->
      <div class="row">
