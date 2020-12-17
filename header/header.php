@@ -107,7 +107,7 @@
     <div class="containerMenuResponsive">
       <div class="containerMenuResponsive__masque--retour"></div>
       <div class="containerMenuResponsive__masque--aller"></div>
-      <div class="containerMenuResponsive__page">
+      <div class="containerMenuResponsive__page position-fixed">
         <div class="containerMenuResponsive__page__topImage"></div>
         <nav class="containerMenuResponsive__page__nav navbar text-center p-4 border-0">
 

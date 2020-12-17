@@ -1,7 +1,7 @@
-@import "../scss/utils/variables.scss";
-@import "../scss/utils/fonctions.scss";
-@import "../scss/utils/mixins.scss";
-@import "../scss/utils/placeholders.scss";
+@import "../utils/variables.scss";
+@import "../utils/fonctions.scss";
+@import "../utils/mixins.scss";
+@import "../utils/placeholders.scss";
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 html, body {
@@ -295,7 +295,7 @@ html, body {
     }
     .containerMenuResponsive__masque--aller {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -305,7 +305,7 @@ html, body {
     }
     .containerMenuResponsive__masque--retour {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -315,9 +315,15 @@ html, body {
     }
     .containerMenuResponsive__masque--aller--active .containerMenuResponsive__masque--aller {
       display: block;
+    } 
+    .containerMenuResponsive__masque--aller--active .containerMenuResponsive__navbar__button--div {
+      position: fixed;
     }
     .containerMenuResponsive__masque--retour--active .containerMenuResponsive__masque--retour{
       display: block;
+    }
+    .containerMenuResponsive__masque--retour--active .containerMenuResponsive__navbar__button--div {
+      position: absolute;
     }
     .containerMenuResponsive__page__nav__ul__li__a--contact {
       color: #aa956f;
@@ -507,7 +513,7 @@ html, body {
     }
     .containerMenuResponsive__masque--aller {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -517,7 +523,7 @@ html, body {
     }
     .containerMenuResponsive__masque--retour {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -590,3 +596,10 @@ html, body {
       border-bottom: 1px solid #aa956f;
     }
   }
+
+.containerMenuResponsive__navbar__button--div {
+  z-index: 1000;
+}
+.containerMenuResponsive__page{
+  z-index: 100;
+}
