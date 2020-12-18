@@ -91,10 +91,15 @@ containerMenuResponsive__navbar__button.addEventListener("click", function(){
     if (containerMenuResponsive__navbar__button.parentNode.parentNode.classList.contains("containerMenuResponsive__navbar__button--div--active")){
         containerMenuResponsive__navbar__button.parentNode.parentNode.classList.add("containerMenuResponsive__masque--aller--active")
         containerMenuResponsive__navbar__button.parentNode.parentNode.classList.remove("containerMenuResponsive__masque--retour--active")
+        containerMenuResponsive__masque__retour.style.zIndex="1"
     }
     else {
         containerMenuResponsive__navbar__button.parentNode.parentNode.classList.add("containerMenuResponsive__masque--retour--active")
         containerMenuResponsive__navbar__button.parentNode.parentNode.classList.remove("containerMenuResponsive__masque--aller--active")
+        /// fonction qui enleve le z-index de masque retour lors de la fermeture de menu responsive 
+        setTimeout(()=>{
+            containerMenuResponsive__masque__retour.style.zIndex="0"
+        }, 1000)
     }
 })
 let background_color_function_ajout = 0
@@ -156,3 +161,4 @@ containerMenuResponsive__navbar__button.addEventListener("click", function(){
     containerMenuResponsive__page__sousMenu__sousSousSousMenu__a[0].parentNode.classList.remove("containerMenuResponsive__page__sousMenu__sousSousSousMenu__a--active")
     containerMenuResponsive__page__sousMenu__sousSousSousMenu__a[1].parentNode.classList.remove("containerMenuResponsive__page__sousMenu__sousSousSousMenu__a--active")
 })
+
