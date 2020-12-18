@@ -318,7 +318,7 @@
         <div class="col-12 p-0">
           <div class="jumbotron jumbotron-fluid m-0 bg-white">
             <div class="container d-flex justify-content-center">
-              <a class="btn btn-primary card_text_perso text-light shadow" href="../blog/blog.php">Voir plus</a>
+              <a class="btn btn-primary card_text_perso text-light shadow" href="../blog/blog.php?article=1">Voir plus</a>
             </div>
           </div>
         </div>
