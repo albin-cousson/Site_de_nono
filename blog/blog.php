@@ -175,8 +175,8 @@
           $nmb_article = $count_article_recu['article'];
           $per_pages_article = 6;
           $nmb_pages_article = CEIL($nmb_article / $per_pages_article);
-          if (isset($_GET['page_article']) && $_GET['page_article'] > 0 && $_GET['page_article'] <= $nmb_pages_article){
-              $cur_pages_article = $_GET['page_article'];
+          if (isset($_GET['article']) && $_GET['article'] > 0 && $_GET['article'] <= $nmb_pages_article){
+              $cur_pages_article = $_GET['article'];
           }
           else {
               $cur_pages_article = 1;
@@ -198,7 +198,7 @@
                   </div>
                   <div class="d-flex align-items-center">
                     <a class="btn btn-outline-primary card_text_perso" href="./article.php?article=<?php echo $article_recu['id'] ?>"> Lire l'article </a>
-                    <i class="fab f=a-instagram card_icone_perso pl-4"></i>
+                    <i class="fab fa-instagram card_icone_perso pl-4"></i>
                   </div>
                 </div>
                 <div class="card-footer">
@@ -212,33 +212,33 @@
         </div>
 
         <?php
-        if (isset($_GET['page_article'])){
-          if ($_GET['page_article']<=1){
+        if (isset($_GET['article'])){
+          if ($_GET['article']<=1){
             $prev = 1;
           } else {
-            $prev = $_GET['page_article'] -1;
+            $prev = $_GET['article'] -1;
           }
-          if ($_GET['page_article']>($nmb_pages_article -1)){
+          if ($_GET['article']>($nmb_pages_article -1)){
             $next = 1;
           } else {
-            $next = $_GET['page_article'] +1;
+            $next = $_GET['article'] +1;
           }
         }
         ?>
         <nav aria-label="Page navigation example" class="navigation d-flex justify-content-center mb-5">
           <ul class="pagination m-0">
             <li class="page-item">
-              <a class="page-link" href="?page_article=<?php echo $prev ?>&second_article=true" aria-label="Previous">
+              <a class="page-link" href="?article=<?php echo $prev ?>&second_article=true" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
             <?php
               for ($i=1; $i<=$nmb_pages_article; $i++){
-                echo "<li class='page-item'><a class='page-link' href='?page_article=$i&second_article=true'>$i</a></li>";
+                echo "<li class='page-item'><a class='page-link' href='?article=$i&second_article=true'>$i</a></li>";
             }
             ?>
             <li class="page-item">
-              <a class="page-link" href="?page_article=<?php echo $next ?>&second_article=true" aria-label="Next">
+              <a class="page-link" href="?article=<?php echo $next ?>&second_article=true" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
