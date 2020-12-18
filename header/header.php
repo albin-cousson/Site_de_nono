@@ -24,11 +24,11 @@
                   <li class="nav-item sous-menu-main-item active mx-2 mr-4">
                     <a class="nav-link sous-menu-main-link" href="#">Nos bearded collie</a>
                     <ul class="sous-menu sous-menu-one shadow">
-                      <li class="sous-menu-item">
-                        <a class="sous-menu-link" href="../bearded_collie/male.php"> Nos mâles</a>
+                      <li class="sous-menu-item position-relative">
+                        <a class="sous-menu-link stretched-link" href="../bearded_collie/male.php"> Nos mâles</a>
                       </li>
-                      <li class="sous-menu-item">
-                        <a class="sous-menu-link" href="../bearded_collie/femelle.php"> Nos femelles</a>
+                      <li class="sous-menu-item position-relative">
+                        <a class="sous-menu-link stretched-link" href="../bearded_collie/femelle.php"> Nos femelles</a>
                       </li>
                     </ul>
                   </li>
@@ -38,11 +38,11 @@
                   <li class="nav-item sous-menu-main-item  active mx-2 mr-4">
                     <a class="nav-link sous-menu-main-link" href="#">Nos shih tzu</a>
                     <ul class="sous-menu sous-menu-two shadow">
-                      <li class="sous-menu-item">
-                        <a class="sous-menu-link" href="../shih_tzu/male.php"> Nos mâles</a>
+                      <li class="sous-menu-item position-relative">
+                        <a class="sous-menu-link stretched-link" href="../shih_tzu/male.php"> Nos mâles</a>
                       </li>
-                      <li class="sous-menu-item">
-                        <a class="sous-menu-link" href="../shih_tzu/femelle.php"> Nos femelles</a>
+                      <li class="sous-menu-item position-relative">
+                        <a class="sous-menu-link stretched-link" href="../shih_tzu/femelle.php"> Nos femelles</a>
                       </li>
                     </ul>
                   </li>
@@ -58,11 +58,11 @@
                         <a class="sous-menu-link sous-menu-link-after"> Nos bearded collie</a>
                         
                         <ul class="sous-sous-menu">
-                          <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link" href="../chiots_bearded_collie/male.php"> Nos mâles</a>
+                          <li class="sous-sous-menu-item position-relative">
+                            <a class="sous-sous-menu-link stretched-link" href="../chiots_bearded_collie/male.php"> Nos mâles</a>
                           </li>
-                          <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link" href="../chiots_bearded_collie/femelle.php"> Nos femelles</a>
+                          <li class="sous-sous-menu-item position-relative">
+                            <a class="sous-sous-menu-link stretched-link" href="../chiots_bearded_collie/femelle.php"> Nos femelles</a>
                           </li>
                         </ul>
                       </li>
@@ -71,11 +71,11 @@
                         <a class="sous-menu-link sous-menu-link-after"> Nos shih tzu</a>
 
                         <ul class="sous-sous-menu">
-                          <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link" href="../chiots_shih_tzu/male.php"> Nos mâles</a>
+                          <li class="sous-sous-menu-item position-relative">
+                            <a class="sous-sous-menu-link stretched-link" href="../chiots_shih_tzu/male.php"> Nos mâles</a>
                           </li>
-                          <li class="sous-sous-menu-item">
-                            <a class="sous-sous-menu-link" href="../chiots_shih_tzu/femelle.php"> Nos femelles</a>
+                          <li class="sous-sous-menu-item position-relative">
+                            <a class="sous-sous-menu-link stretched-link" href="../chiots_shih_tzu/femelle.php"> Nos femelles</a>
                           </li>
                         </ul>
                       </li>
