@@ -9882,6 +9882,7 @@ form textarea:focus {
   position: absolute;
   top: 12px;
   right: 20px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=contact.css.map */
