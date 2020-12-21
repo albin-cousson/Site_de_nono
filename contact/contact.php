@@ -16,6 +16,14 @@
         if (isset($_POST['nom'])){
             $ajoutMessage = $bdd->prepare("INSERT INTO messagerie(nom, prenom, mail, message) VALUES (?,?,?,?)");
             $ajoutMessage->execute(array($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['message']));
+            ?>
+                <div class="alert alert-success alert-dismissible fade show position-absolute w-100" role="alert">
+                    <div><strong>Merci pour votre message !</strong> Vous recevrez une réponse dans moins de 24h.</div>
+                    <svg type="button" class="alert_close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+            <?php
         }
     ?>
 
@@ -62,5 +70,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="../header/js/header.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>

@@ -41,3 +41,12 @@ form textarea:focus {
         margin: auto;
     }
 }  
+.alert {
+    top: 0;
+    z-index: 1001;
+    &_close{
+        position: absolute;
+        top: 12px;
+        right: 20px;
+    }
+}  

@@ -214,6 +214,13 @@ html, body {
     background-repeat: no-repeat;
     height: 330px;
 }
-
-
-   
+.alert {
+    top: 0;
+    z-index: 1001;
+    &_close{
+        position: absolute;
+        top: 12px;
+        right: 20px;
+    }
+}
+    
