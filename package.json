@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch scss/pages/male-femelle.scss:chiots_shih_tzu/css/bearded_collie3.css"
+    "sass": "sass --watch scss/pages/article.scss:blog/css/article1.css"
   },
   "keywords": [],
   "author": "",

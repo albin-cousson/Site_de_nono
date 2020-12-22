@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <title>Élevage de Saint Prixe - Chiots bearded collie male </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/ec6f517b5c.js" crossorigin="anonymous"></script>

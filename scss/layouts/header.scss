@@ -86,7 +86,7 @@ html, body {
     left: -45px;
   }
   .sous-menu-three{
-    left: -53px;
+    left: -53px; 
   }
   .sous-menu-actife .sous-menu {
     display: block;
@@ -601,5 +601,8 @@ html, body {
   z-index: 1000;
 }
 .containerMenuResponsive__page{
+  z-index: 100;
+}
+.sous-menu{
   z-index: 100;
 }

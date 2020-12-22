@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <title>Élevage de Saint Prixe - Accueil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/ec6f517b5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../header/css/header1.css"/>
     <link rel="stylesheet" href="css/accueil7.css"/>
   </head>
-  <body>
+  <body> 
 
     <?php 
     
