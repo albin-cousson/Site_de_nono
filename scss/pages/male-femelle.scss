@@ -175,16 +175,14 @@ html, body {
         border-radius: 6px;
         background-image: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg");
     }
-}
+} 
 .buttonGenealogie{
     font-size: 1.2rem;
-    border-radius: 0.25rem ;
-
 }
 @keyframes flecheGenealogie {
-    0% {
+    0% { 
         transform: translateX(0%)
-    }
+    }  
     50% {
         transform: translateX(20%)
     }
