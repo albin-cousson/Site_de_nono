@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 p-0">
-      <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark">
+      <nav class="navbar navbar-dark d-flex justify-content-between align-items-center bg-dark p-3">
         <ul class="navbar-nav d-flex flex-row">
           <li class="nav-item">
             <a class="nav-link mr-3" href="./admin_accueil.php">
@@ -57,10 +57,18 @@
           </li>
         </ul>
         <div>
-          <a class="btn btn-light" href="messagerie.php">
+          <a class="btn btn-light btn__messagerie ml-3" href="messagerie.php">
             Messagerie
+            <?php 
+              include("../bdd.php");
+              $message_enn_attente = $bdd->query("SELECT COUNT(vue) AS vue FROM messagerie WHERE vue=1");
+              $message_enn_attente_recu = $message_enn_attente->fetch();
+              if($message_enn_attente_recu['vue'] > 0) {
+                ?> <div><?php echo $message_enn_attente_recu["vue"]; ?></div> <?php
+              }
+            ?>
           </a>
-          <a class="btn btn-light" href="deconexion.php">
+          <a class="btn btn-light ml-3" href="deconexion.php">
             Deconexion
           </a>
         </div>

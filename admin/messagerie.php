@@ -16,6 +16,8 @@
 
         include("../bdd.php");
 
+        $bdd->query("UPDATE messagerie SET vue=0 WHERE vue=1");
+
         $connexion = $bdd->prepare("SELECT pseudo, mot_de_passe FROM admin WHERE pseudo=?");
         $connexion->execute(array($_SESSION['pseudo']));
         $connexion_recu = $connexion->fetch();
@@ -81,7 +83,7 @@
 
     ?>
 
-    <div class="pop-up position-absolute flex-column align-items-center p-4">
+    <div class="pop-up position-absolute flex-column align-items-center p-4 bg-light">
       <img class="pop-up__close" src="images/cancel.svg" alt=""/>
       <div class="pop-up__group d-flex flex-column align-items-center">
         <p class="pop-up__titre h2">Nom</p>
@@ -97,7 +99,7 @@
       </div>
       <div class="pop-up__group d-flex flex-column align-items-center">
         <p class="pop-up__titre h2">Message</p>
-        <p class="pop-up__contenu lead"></p>
+        <p class="pop-up__contenu pop-up__contenu__text lead"></p>
       </div>
     </div>
 
